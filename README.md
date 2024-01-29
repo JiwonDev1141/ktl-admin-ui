@@ -13,12 +13,12 @@ npm run dev
 
 ### 사용 기술
 
--[x] Vue3.js: 싱글 페이지 어플리케이션 (SPA) 프레임워크 \
--[x] TypeScript \
--[x] Vite: 모듈 번들러 \
--[x] TailwindCSS: Mobile First css 프레임워크 \
--[x] Storybook.js: 컴포넌트 기반의 개발을 도와주는 툴 (컴포넌트 문서화 등) \
--[x] Prettier + EsLint 설정
+- [x] Vue3.js: 싱글 페이지 어플리케이션 (SPA) 프레임워크 \
+- [x] TypeScript \
+- [x] Vite: 모듈 번들러 \
+- [x] TailwindCSS: Mobile First css 프레임워크 \
+- [x] Storybook.js: 컴포넌트 기반의 개발을 도와주는 툴 (컴포넌트 문서화 등) \
+- [x] Prettier + EsLint 설정
 
 
 ### 환경변수 세팅
@@ -40,7 +40,7 @@ npm run dev
 ##### 본문 - 한 줄에 최대 72 글자까지만 입력하기
  1. 무엇을 수정했는지
  2. 왜 수정했는지
-
+```
  꼬릿말은 아래에 작성: ex) 이슈 번호
 -
    [커밋 타입]  리스트
@@ -60,3 +60,4 @@ npm run dev
      제목과 본을 한 줄 띄워 분리하기
      본문에 여러줄의 메시지를 작성할 땐 "-"로 구분했나요?
  ------------------
+ ```
