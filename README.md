@@ -13,12 +13,12 @@ npm run dev
 
 ### 사용 기술
 
-- [x] Vue3.js: 싱글 페이지 어플리케이션 (SPA) 프레임워크 \
-- [x] TypeScript \
-- [x] Vite: 모듈 번들러 \
-- [x] TailwindCSS: Mobile First css 프레임워크 \
-- [x] Storybook.js: 컴포넌트 기반의 개발을 도와주는 툴 (컴포넌트 문서화 등) \
-- [x] Prettier + EsLint 설정
+- [x] Vue3.js
+- [x] TypeScript
+- [x] Vite
+- [x] TailwindCSS
+- [x] Storybook.js
+- [x] Prettier + EsLint
 
 
 ### 환경변수 세팅
