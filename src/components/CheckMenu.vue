@@ -11,7 +11,6 @@ import { reactive } from 'vue'
 defineProps({
     color: String,
     name: String,
-
 })
 
 const state = reactive({
@@ -45,7 +44,7 @@ input[type="checkbox"]::before {
 input[type="checkbox"]:checked::before {
     transform: scale(1);
 }
-
+ 
 input[type="checkbox"]:hover {
     color: black;
 } */
