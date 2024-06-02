@@ -47,7 +47,7 @@
 
 
 
-                    <PasswordInput placeholder="Password" />
+                    <PasswordInput :apply-hide-btn="true" placeholder="Password" />
                     <Spacer />
 
                     <button class="text-white w-full bg-primaryColor rounded-md text-[0.9rem] py-3">로그인</button>
