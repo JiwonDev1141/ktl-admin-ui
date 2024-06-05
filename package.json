@@ -13,12 +13,14 @@
     "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^8.1.5",
     "@storybook/addon-essentials": "^7.6.10",
     "@storybook/addon-interactions": "^7.6.10",
     "@storybook/addon-links": "^7.6.10",
     "@storybook/blocks": "^7.6.10",
     "@storybook/test": "^7.6.10",
     "@storybook/vue3": "^7.6.10",
+    "@types/markdown-it": "^14.1.1",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "@vue/eslint-config-prettier": "^9.0.0",
@@ -37,8 +39,14 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "@storybook/addon-storysource": "^8.1.5",
     "@storybook/vue3-vite": "^7.6.10",
     "@vitejs/plugin-vue": "^5.0.3",
+    "markdown-it": "^14.1.0",
+    "storybook-addon-code-preview": "^0.0.9",
+    "storybook-addon-preview": "^2.3.0",
+    "storybook-code-view": "^1.0.0",
+    "vite-raw-plugin": "^1.0.2",
     "vue-router": "^4.0.13"
   }
 }

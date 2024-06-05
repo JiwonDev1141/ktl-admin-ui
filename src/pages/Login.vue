@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col h-screen md:flex-row">
         <!-- 왼쪽 화면 영역 start -->
-        <div class="h-full bg-primaryColor text-white flex justify-center items-center md:w-screen h-1/2">
+        <div class=" bg-primaryColor text-white flex justify-center items-center h-3/6 md:w-screen md:h-full">
             <div class="flex flex-col pl-4">
                 <h3 class="text-[2rem] font-semibold">스마트 생태공장</h3>
                 <div class="p-[20px]"></div>
@@ -25,7 +25,7 @@
         <!-- 왼쪽 화면 영역 end -->
 
         <!-- 오른쪽 화면 영역 start -->
-        <div class="h-full flex justify-center items-center md:w-screen h-1/2">
+        <div class=" flex justify-center items-center md:w-screen h-1/2 md:h-full">
             <div class="flex flex-col justify-start md:w-4/6 lg:w-3/6">
                 <h3 class="text-[2rem] font-medium tracking-tighter">로그인</h3>
                 <span class="text-[0.9rem] font-normal text-primaryColor mb-3 cursor-pointer">회원가입</span>
