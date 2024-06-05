@@ -1,7 +1,8 @@
 <template>
     <div>
         <input :type="state.hidePassword ? 'password' : 'text'"
-            class="w-full p-3 rounded-md border-solid border-2 border-gray-200 text-sm" :placeholder="placeholder" />
+            class="w-full p-3 rounded-md border-solid border-2 border-gray-200 text-sm max-w-[400px]"
+            :placeholder="placeholder" />
         <div @click="state.hidePassword = !state.hidePassword"
             style="height: 0; width: 0; position: relative; margin-left: auto; right: 24px; bottom: 30px; cursor: pointer;">
             <svg v-if="applyHideBtn == true" style="z-index: 1;" xmlns="http://www.w3.org/2000/svg" width="14"

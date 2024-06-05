@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col h-screen md:flex-row">
         <!-- 왼쪽 화면 영역 start -->
-        <div class=" bg-primaryColor text-white flex justify-center items-center h-3/6 md:w-screen md:h-full">
+        <div class=" bg-primaryColor text-white flex justify-center items-center h-2/6 md:w-screen md:h-full">
             <div class="flex flex-col pl-4">
                 <h3 class="text-[2rem] font-semibold">스마트 생태공장</h3>
                 <div class="p-[20px]"></div>
