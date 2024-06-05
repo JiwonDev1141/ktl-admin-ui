@@ -4,8 +4,8 @@
             class="w-full p-3 rounded-md border-solid border-2 border-gray-200 text-sm" :placeholder="placeholder" />
         <div @click="state.hidePassword = !state.hidePassword"
             style="height: 0; width: 0; position: relative; margin-left: auto; right: 24px; bottom: 30px; cursor: pointer;">
-            <svg v-if="applyHideBtn == true" style="" xmlns="http://www.w3.org/2000/svg" width="14" height="12"
-                viewBox="0 0 14 12" fill="none">
+            <svg v-if="applyHideBtn == true" style="z-index: 1;" xmlns="http://www.w3.org/2000/svg" width="14"
+                height="12" viewBox="0 0 14 12" fill="none">
                 <path
                     d="M5.44411 6.00001C6.30218 6.00001 6.99981 5.27123 6.99981 4.37486C6.99981 4.08284 6.90501 3.8086 6.79562 3.57244C6.86369 3.56483 6.93175 3.56229 6.99981 3.56229C8.28812 3.56229 9.33336 4.63133 9.33336 6.00001C9.33336 7.34584 8.28812 8.43774 6.99981 8.43774C5.68962 8.43774 4.66626 7.34584 4.66626 6.00001C4.66626 5.92891 4.66869 5.85781 4.67598 5.78671C4.90205 5.90098 5.16457 6.00001 5.44411 6.00001Z"
                     fill="#6B7280" />

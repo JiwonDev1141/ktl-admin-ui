@@ -7,6 +7,7 @@ import {
 
 import MainPage from '../pages/MainPage.vue';
 import Login from '../pages/Login.vue';
+import MonitoringVue from '../pages/User/Monitoring.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,6 +19,11 @@ const routes: Array<RouteRecordRaw> = [
     component: Login,
     path: '/login',
     name: 'loginPage',
+  },
+  {
+    component: MonitoringVue,
+    path: '/monitoring',
+    name: 'monitoring',
   },
   //   {
   //     component: Example,

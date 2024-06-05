@@ -9,6 +9,7 @@ export default {
     extend: {
       colors: {
         primaryColor: '#6950E8',
+        'primaryColor-soft': '#9747FF1A',
       },
     },
   },

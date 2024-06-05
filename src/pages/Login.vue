@@ -28,7 +28,7 @@
         <div class="h-full flex justify-center items-center md:w-screen h-1/2">
             <div class="flex flex-col justify-start md:w-4/6 lg:w-3/6">
                 <h3 class="text-[2rem] font-medium tracking-tighter">로그인</h3>
-                <span class="text-[0.9rem] font-normal text-primaryColor mb-3">회원가입</span>
+                <span class="text-[0.9rem] font-normal text-primaryColor mb-3 cursor-pointer">회원가입</span>
 
                 <div class="flex">
                     <CheckMenu class="mr-2" name="사용자" color="#6950E8" />
@@ -50,7 +50,13 @@
                     <PasswordInput :apply-hide-btn="true" placeholder="Password" />
                     <Spacer />
 
-                    <button class="text-white w-full bg-primaryColor rounded-md text-[0.9rem] py-3">로그인</button>
+                    <button class=" text-white w-full bg-primaryColor rounded-md text-[0.9rem] py-3">
+
+                        <span class="hover:animate-ping">
+                            로그인
+
+                        </span>
+                    </button>
                 </form>
             </div>
         </div>
