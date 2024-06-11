@@ -1,4 +1,5 @@
 <template>
+    <CodeMirror />
     <div class="flex flex-col h-screen md:flex-row">
         <!-- 왼쪽 화면 영역 start -->
         <div class=" bg-primaryColor text-white flex justify-center items-center h-2/6 md:w-screen md:h-full">
@@ -73,6 +74,7 @@ import CheckMenu from "../components/CheckMenu.vue";
 import Spacer from "../components/Spacer.vue";
 import FormInput from "../components/FormInput.vue";
 import PasswordInput from "../components/PasswordInput.vue"
+import CodeMirror from "../components/common/CodeMirror.vue"
 export default {
 
 
@@ -94,7 +96,7 @@ export default {
             logoList
         };
     },
-    components: { AppButton, KanbanBoard, CheckMenu, Spacer, FormInput, PasswordInput }
+    components: { AppButton, KanbanBoard, CheckMenu, Spacer, FormInput, PasswordInput, CodeMirror }
 
 };
 </script>

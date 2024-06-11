@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 import StyledButton from './StyledButton.vue';
 
+import CodeMirror from './common/CodeMirror.vue';
+
 import sourceCode from './StyledButton.vue?raw';
 
 /**
@@ -16,14 +18,14 @@ type Story = StoryObj<typeof StyledButton>;
 
 export const Primary: Story = {
   render: (args) => ({
-    components: { StyledButton },
+    components: { StyledButton, CodeMirror },
     setup() {
       return { args, sourceCode };
     },
     template: `
     <div class='flex justify-center absolute right-0 w-1/2 h-full pr-2'>
     <em>Code Preview</em>
-    <textarea disabled='true' class='w-full h-full px-10 py-4 bg-gray-800 text-green-400 rounded-md'>{{sourceCode}}</textarea>
+    <CodeMirror :sourceCode=sourceCode />
     </div>
     <StyledButton v-bind="args">{{ args.default }}</StyledButton>
     `,

@@ -4,6 +4,8 @@ import KanbanBoard from './KanbanBoard.vue';
 
 import sourceCode from './KanbanBoard.vue?raw';
 
+import CodeMirror from './common/CodeMirror.vue';
+
 const meta: Meta<typeof KanbanBoard> = {
   component: KanbanBoard,
 };
@@ -13,14 +15,14 @@ type Story = StoryObj<typeof KanbanBoard>;
 
 export const Primary: Story = {
   render: (args) => ({
-    components: { KanbanBoard },
+    components: { KanbanBoard, CodeMirror },
     setup() {
       return { args, sourceCode };
     },
     template: `
     <div class='flex justify-center absolute right-0 w-1/2 h-full pr-2'>
     <em>Code Preview</em>
-    <textarea disabled='true' class='w-full h-full px-10 py-4 bg-gray-800 text-green-400 rounded-md'>{{sourceCode}}</textarea>
+    <CodeMirror :sourceCode=sourceCode />
     </div>
     <KanbanBoard v-bind="args" />
     `,
