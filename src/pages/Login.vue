@@ -25,7 +25,7 @@
         <!-- 왼쪽 화면 영역 end -->
 
         <!-- 오른쪽 화면 영역 start -->
-        <div class=" flex justify-center items-center md:w-screen h-1/2 md:h-full">
+        <div class="flex justify-center items-center md:w-screen h-1/2 md:h-full">
             <div class="flex flex-col justify-start md:w-4/6 lg:w-3/6">
                 <h3 class="text-[2rem] font-medium tracking-tighter">로그인</h3>
                 <span class="text-[0.9rem] font-normal text-primaryColor mb-3 cursor-pointer">회원가입</span>
@@ -35,20 +35,20 @@
                     <CheckMenu name="관리자" color="#6950E8" />
                 </div>
 
-                <Spacer />
+                <Spacer height="1rem" />
 
                 <span class="font-bold text-[1.2rem]">Please enter your ID password</span>
 
-                <Spacer />
-                <form @submit.prevent="">
+                <Spacer height="1rem" />
+                <form style="max-width: 400px;" @submit.prevent="">
 
                     <FormInput placeholder="Enter your work email" />
-                    <Spacer />
+                    <Spacer height="1rem" />
 
 
 
                     <PasswordInput :apply-hide-btn="true" placeholder="Password" />
-                    <Spacer />
+                    <Spacer height="1rem" />
 
                     <button class=" text-white w-full bg-primaryColor rounded-md text-[0.9rem] py-3">
 

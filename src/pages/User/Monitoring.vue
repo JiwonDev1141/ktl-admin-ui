@@ -1,5 +1,35 @@
 <template>
-    <LeftSideBar :menu-list="menuList" />
+    <div class="flex">
+        <Layout />
+        <LeftSideBar :menu-list="menuList" />
+
+        <div class="flex overflow-y-auto overflow-x-hidden" style="width: calc(100%);">
+            <!-- <div style="margin-left: 2rem;"></div> -->
+            <div class="w-full">
+                <TitleBox width="80%" text="통합 모니터링 시스템" />
+                <div class="flex">
+                    <KanbanBoard title="1,352 khw" description="금일 에너지 사용량" />
+                    <Spacer width="2rem" />
+                    <KanbanBoard title="1,352 khw" description="금일 에너지 사용량" />
+                    <Spacer width="2rem" />
+                    <KanbanBoard title="1,352 khw" description="금일 에너지 사용량" />
+                    <Spacer width="2rem" />
+
+                    <!-- <KanbanBoard title="1,352 khw" description="금일 에너지 사용량" /> -->
+
+                </div>
+            </div>
+
+            <TitleBox width="20%" text="실시간 기상정보" />
+        </div>
+
+
+
+
+
+    </div>
+
+    <!-- <VViewer /> -->
 </template>
 
 <script lang="ts">
@@ -7,6 +37,14 @@
 import Spacer from "../../components/Spacer.vue";
 
 import LeftSideBar from "../../components/LeftSideBar.vue"
+
+import TitleBox from "../../components/TitleBox.vue"
+
+import VViewer from "../../components/VViewer.vue";
+
+import Layout from "../../components/Layout.vue"
+
+import KanbanBoard from "../../components/KanbanBoard.vue";
 
 interface menu {
     menuTitle: string;
@@ -52,12 +90,12 @@ export default {
         ]
 
 
-
         return {
-            menuList
+            menuList,
+
         };
     },
-    components: { Spacer, LeftSideBar }
+    components: { Spacer, LeftSideBar, TitleBox, VViewer, Layout, KanbanBoard }
 
 };
 </script>

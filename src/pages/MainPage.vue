@@ -9,11 +9,13 @@
 <script lang="ts">
 import KanbanBoard from "../components/KanbanBoard.vue";
 import AppButton from "../components/AppButton.vue";
+import router from "../router"
 export default {
 
 
   setup() {
-    alert(`현재 모드 (import.meta.env.MODE) : ${import.meta.env.MODE}`)
+    // alert(`현재 모드 (import.meta.env.MODE) : ${import.meta.env.MODE}`)
+    router.push("/login")
     return {};
   },
   components: { AppButton, KanbanBoard }

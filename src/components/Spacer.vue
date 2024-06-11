@@ -1,9 +1,16 @@
 <template>
-    <div class="my-2"></div>
+    <div :style="`width: ${width}; height: ${height}`"></div>
 </template>
 
 <script lang="ts" setup>
-// defineProps({
-//     text: String,
-// })
+defineProps({
+    width: {
+        default: '0',
+        type: String
+    },
+    height: {
+        default: '0',
+        type: String
+    }
+})
 </script>

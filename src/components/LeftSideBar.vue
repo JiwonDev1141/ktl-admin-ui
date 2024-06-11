@@ -1,6 +1,6 @@
 <template>
-    <div class="fixed h-screen border-r-1 bg-gray-100 w-full md:w-[300px] p-[20px]">
-        <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="fixed h-screen border-r-1 bg-gray-100 w-screen md:w-[300px] p-[20px] text-[0.9rem]">
+        <svg width="30" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 d="M30.4343 14.6159V14.6516C30.4311 15.1578 30.0179 15.6656 29.1996 16.0476L1.77493 28.9022C0.126274 29.6763 -0.483448 29.0458 0.414289 27.5024L5.43247 18.8736C6.16012 17.6143 6.5765 16.1625 6.5765 14.6159C6.5765 13.0686 6.16012 11.616 5.43247 10.3582L0.414289 1.72944C-0.483448 0.185209 0.126274 -0.445219 1.77493 0.32884L29.1996 13.1827C30.0179 13.5686 30.4311 14.074 30.4343 14.5802V14.6159Z"
                 fill="#6950E8" />
@@ -21,7 +21,7 @@
 
         <div v-for="(menu, index) in menuList" :key="index">
             <div @click="() => state.activatedMenu === menu.menuTitle ? state.activatedMenu = '' : state.activatedMenu = menu.menuTitle"
-                class="flex items-center justify-between text-gray-500 cursor-pointer"
+                class="flex items-center justify-between text-gray-500 cursor-pointer text-[0.9rem]"
                 :class="state.activatedMenu === menu.menuTitle ? 'text-primaryColor' : ''">
                 <button class="flex items-center">
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,8 +49,8 @@
             <div v-if="state.activatedMenu === menu.menuTitle">
                 <div v-for="(submenu, index) in menu.submenuList" :key="index">
                     <button @click="state.activatedSubmenu = submenu.name"
-                        :class="state.activatedSubmenu === submenu.name ? 'text-primaryColor bg-primaryColor-soft' : ''"
-                        class="hover:text-primaryColor flex justify-between items-center my-2 py-4 px-4 rounded-full hover:bg-primaryColor-soft w-full">
+                        :class="state.activatedSubmenu === submenu.name ? 'text-primaryColor bg-primaryColor-soft font-bold' : ''"
+                        class="hover:text-primaryColor flex justify-between items-center my-2 py-3 px-4 rounded-full hover:bg-primaryColor-soft w-full">
 
                         <div class="flex items-center">
                             <EllipseIcon :is-selected="state.activatedSubmenu === submenu.name" />
