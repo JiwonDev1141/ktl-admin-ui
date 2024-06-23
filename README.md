@@ -25,7 +25,7 @@ npm run local
 - [x] TypeScript
 - [x] Vite
 - [x] TailwindCSS
-- [x] Storybook.js
+- [x] Storybook
 - [x] Prettier + EsLint
 
 

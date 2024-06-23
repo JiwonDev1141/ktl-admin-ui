@@ -7,7 +7,7 @@ import {
 
 import MainPage from '../pages/MainPage.vue';
 import Login from '../pages/Login.vue';
-import MonitoringVue from '../pages/User/Monitoring.vue';
+import MonitoringVue from '../pages/User/Monitoring/Monitoring.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {

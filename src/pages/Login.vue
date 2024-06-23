@@ -1,5 +1,5 @@
 <template>
-    <CodeMirror />
+
     <div class="flex flex-col h-screen md:flex-row">
         <!-- 왼쪽 화면 영역 start -->
         <div class=" bg-primaryColor text-white flex justify-center items-center h-2/6 md:w-screen md:h-full">
@@ -51,7 +51,8 @@
                     <PasswordInput :apply-hide-btn="true" placeholder="Password" />
                     <Spacer height="1rem" />
 
-                    <button class=" text-white w-full bg-primaryColor rounded-md text-[0.9rem] py-3">
+                    <button @click="routeToMonitoring()"
+                        class=" text-white w-full bg-primaryColor rounded-md text-[0.9rem] py-3">
 
                         <span class="hover:animate-ping">
                             로그인
@@ -75,6 +76,7 @@ import Spacer from "../components/Spacer.vue";
 import FormInput from "../components/FormInput.vue";
 import PasswordInput from "../components/PasswordInput.vue"
 import CodeMirror from "../components/common/CodeMirror.vue"
+import router from "../router";
 export default {
 
 
@@ -90,10 +92,15 @@ export default {
 
         ]
 
+        const routeToMonitoring = () => {
+            router.push("/monitoring")
+        }
+
 
 
         return {
-            logoList
+            logoList,
+            routeToMonitoring
         };
     },
     components: { AppButton, KanbanBoard, CheckMenu, Spacer, FormInput, PasswordInput, CodeMirror }
