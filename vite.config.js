@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue'; //add this line
 import markdownRawPlugin from 'vite-raw-plugin';
-import { join } from 'path';
+import { join, resolve } from 'path';
 import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig({
@@ -17,7 +17,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': join(process.cwd(), './web'),
+      '@': join(process.cwd(), './src'),
       '@cesium/widgets': 'https://esm.sh/@cesium/widgets@4.1.0',
       '@cesium/engine': 'https://esm.sh/@cesium/engine@5.0.0',
     },
