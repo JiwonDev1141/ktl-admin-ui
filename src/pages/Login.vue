@@ -93,7 +93,7 @@ export default {
         ]
 
         const routeToMonitoring = () => {
-            router.push("/playground")
+            router.push("/monitoring")
         }
 
 

@@ -29,6 +29,6 @@ defineProps({
 })
 
 const state = reactive({
-    hidePassword: false
+    hidePassword: true
 })
 </script>

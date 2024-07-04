@@ -1,7 +1,7 @@
 <template>
     <div class="flex">
 
-        <canvas ref="MyChart" />
+        <canvas style="width: 100%; height: 30vh;" ref="MyChart" />
     </div>
 </template>
 
@@ -14,11 +14,11 @@ export default {
     data: () => ({
         type: 'bar',
         data: {
-            labels: ["0 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM", "6 PM"],
+            labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"],
             datasets: [
                 {
                     label: '에너지 사용량',
-                    data: [2700, 2300, 5500, 3500, 2450, 2600],
+                    data: [2700, 2300, 6250, 3500, 2450, 2500, 8500, 2300, 6500, 4000, 6500, 300],
                     backgroundColor: [
                         "#6950E8"
                     ],
@@ -30,7 +30,7 @@ export default {
 
                 {
                     label: '에너지 발전량',
-                    data: [2300, 200, 6700, 2600, 4700, 7300],
+                    data: [2300, 200, 6700, 2600, 4700, 7300, 7000, 9500, 7500, 2600, 7000, 3000],
                     backgroundColor: [
                         '#11B886',
                     ],
@@ -42,7 +42,7 @@ export default {
 
                 {
                     label: '재사용 에너지',
-                    data: [6200, 8000, 2700, 8000, 1000, 8000],
+                    data: [6200, 8000, 2700, 8000, 1000, 8000, 5000, 4500, 6000, 4500, 6000, 500],
                     backgroundColor: [
                         "#FEBF06"
                     ],
@@ -55,6 +55,7 @@ export default {
             ]
         },
         options: {
+            responsive: false,
             scales: {
                 y: {
                     beginAtZero: true

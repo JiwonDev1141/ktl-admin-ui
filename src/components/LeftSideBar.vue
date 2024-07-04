@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-col justify-between fixed h-full border-r-1 bg-gray-100 w-screen md:w-[260px] p-[20px] text-[0.9rem]">
+        class="flex flex-col justify-between fixed h-full border-r-1 bg-gray-100 w-screen md:w-[240px] p-[20px] text-[0.9rem]">
 
         <div>
             <svg width="30" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@
                             {{ menu.menuTitle }}
                         </span>
                     </button>
-                    <span>
+                    <span :class="state.activatedMenu === menu.menuTitle ? `rotate-180` : ''">
                         <svg width="12" height="12" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M0.26881 4.40234L3.18361 1.04844C3.27183 0.926562 3.38688 0.875 3.50002 0.875C3.61316 0.875 3.72784 0.926281 3.81643 1.0288L6.73124 4.3827C6.91581 4.59657 6.92358 4.95247 6.74922 5.17794C6.57423 5.405 6.2817 5.41302 6.09837 5.19991L3.49998 2.19054L0.901581 5.19991C0.718217 5.41305 0.426967 5.40499 0.250736 5.17794C0.0764712 4.97422 0.0841417 4.61797 0.26881 4.40234Z"
@@ -77,7 +77,7 @@
         <div>
             <div class="flex flex-col items-center justify-end">
                 <div class="rounded-full p-4 bg-gray-300 w-[3rem] h-[3rem] mb-3 flex items-center justify-center">
-                    <img class="w-[24px] h-[24px]" src="/assets/icon/user.png" />
+                    <img src="/assets/icon/user.png" />
                 </div>
                 <span class="font-bold text-md">사용자 1</span>
                 <span>rockwonit1</span>
