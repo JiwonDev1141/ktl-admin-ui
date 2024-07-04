@@ -18,7 +18,7 @@
                 </span>
 
                 <div class="grid grid-cols-3 w-2/3">
-                    <img class="pt-5" v-for="(logoSrc, index) in logoList" :key="index" :src="logoSrc" />
+                    <img class="pt-3 w-[70px]" v-for="(logoSrc, index) in logoList" :key="index" :src="logoSrc" />
                 </div>
             </div>
 
@@ -84,11 +84,11 @@ export default {
 
         const logoList = [
             "/assets/image/amazon.svg",
-            "/assets/image/dribble.svg",
             "/assets/image/godaddy.svg",
             "/assets/image/google.svg",
-            "/assets/image/yahoo.svg",
             "/assets/image/adidas.svg",
+            "/assets/image/dribble.svg",
+            "/assets/image/yahoo.svg",
 
         ]
 
