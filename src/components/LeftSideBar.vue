@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-col justify-between fixed h-full border-r-1 bg-gray-100 w-screen md:w-[240px] p-[20px] text-[0.9rem]">
+        class="flex flex-col justify-between fixed h-full border-r-1 bg-gray-100 w-screen md:w-[240px] p-[20px] text-[14px]">
 
         <div>
             <svg width="30" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,9 +23,11 @@
             </div>
 
             <div v-for="(menu, index) in menuList" :key="index">
-                <div @click="() => state.activatedMenu === menu.menuTitle ? state.activatedMenu = '' : state.activatedMenu = menu.menuTitle"
+                <div 
+                
+                @click="handleMenuClick(menu)"
                     class="flex items-center justify-between text-gray-500 cursor-pointer text-[0.9rem] mx-1"
-                    :class="state.activatedMenu === menu.menuTitle ? 'text-primaryColor' : ''">
+                    :class="state.activatedMenu === menu.menuTitle ? 'text-primary' : ''">
                     <button class="flex items-center">
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -51,13 +53,13 @@
 
                 <div v-if="state.activatedMenu === menu.menuTitle">
                     <div v-for="(submenu, index) in menu.submenuList" :key="index">
-                        <button @click="state.activatedSubmenu = submenu.name"
-                            :class="state.activatedSubmenu === submenu.name ? 'text-primaryColor bg-primaryColor-soft font-bold' : ''"
-                            class="hover:text-primaryColor flex justify-between items-center my-2 py-2 rounded-full hover:bg-primaryColor-soft w-full">
+                        <button @click="handleSubmenuClick(submenu)"
+                            :class="state.activatedSubmenu === submenu.name ? 'text-primary bg-primarySoft font-bold' : ''"
+                            class="hover:text-primary flex justify-between items-center my-2 py-2 rounded-full hover:bg-primarySoft w-full">
 
                             <div class="flex items-center px-4">
                                 <EllipseIcon :is-selected="state.activatedSubmenu === submenu.name" />
-                                <span class="ml-4">{{ submenu.name }}</span>
+                                <span class="ml-4 text-[14px]">{{ submenu.name }}</span>
                             </div>
 
                             <div class="px-4" v-html="submenu.svg"></div>
@@ -85,7 +87,7 @@
 
             <div class="flex justify-center mt-10">
                 <img class="w-[24px] h-[24px] mr-[15%]" src="/assets/icon/logout.png" />
-                <span class="font-bold">Logout</span>
+                <span @click="handleLogout" class="font-bold">Logout</span>
             </div>
 
         </div>
@@ -95,6 +97,7 @@
 <script lang="ts" setup>
 import EllipseIcon from "../icons/EllipseIcon.vue";
 import { reactive } from "vue";
+import router from "@/router";
 
 interface menu {
     menuTitle: string;
@@ -105,6 +108,7 @@ interface menu {
 interface submenu {
     name: string;
     svg: string | null;
+    routeUrl: string;
 }
 
 defineProps({
@@ -121,7 +125,8 @@ defineProps({
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M2.8125 3.5H21.1875C21.9124 3.5 22.5 4.18556 22.5 5.03125V9.625H20.75V5.54167H3.25V15.75H13.75V23.9167H8.0625C7.82088 23.9167 7.625 23.6881 7.625 23.4062V22.3854C7.625 22.1035 7.82088 21.875 8.0625 21.875H8.2725C8.94287 21.8824 9.55795 21.4423 9.85625 20.7419L10.25 19.8333H2.8125C2.08763 19.8333 1.5 19.1478 1.5 18.3021V5.03125C1.5 4.18556 2.08763 3.5 2.8125 3.5ZM20.75 11.6667H17.25C16.2835 11.6667 15.5 12.5807 15.5 13.7083V21.875C15.5 23.0026 16.2835 23.9167 17.25 23.9167H20.75C21.7165 23.9167 22.5 23.0026 22.5 21.875V13.7083C22.5 12.5807 21.7165 11.6667 20.75 11.6667ZM20.75 21.875H17.25V13.7083H20.75V21.875Z"
                                     fill="#6B7280" />
-                            </svg>`
+                            </svg>`,
+                        routeUrl: '/monitoring'
                     }
                 ]
             }
@@ -130,9 +135,30 @@ defineProps({
 })
 
 const state = reactive({
-    activatedMenu: "",
-    activatedSubmenu: ""
+    activatedMenu: "", // 대메뉴
+    activatedSubmenu: "" // 하위메뉴
 })
 
+const handleMenuClick = (menu) => {
+
+    if(state.activatedMenu === menu.menuTitle) {
+        state.activatedMenu = ''
+    }
+
+    if(state.activatedMenu !== menu.menuTitle) {
+        state.activatedMenu = menu.menuTitle
+    }
+    
+    
+}
+
+const handleSubmenuClick = (submenu) => {
+    state.activatedSubmenu = submenu.name
+    router.push(submenu.routeUrl)
+}
+
+const handleLogout = () => {
+    router.push("/login")
+}
 
 </script>

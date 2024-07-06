@@ -2,7 +2,7 @@
 
     <div class="flex flex-col h-screen md:flex-row">
         <!-- 왼쪽 화면 영역 start -->
-        <div class=" bg-primaryColor text-white flex justify-center items-center h-2/6 md:w-screen md:h-full">
+        <div class=" bg-primary text-white flex justify-center items-center h-2/6 md:w-screen md:h-full">
             <div class="flex flex-col pl-4">
                 <h3 class="text-[2rem] font-semibold">스마트 생태공장</h3>
                 <div class="p-[20px]"></div>
@@ -29,11 +29,11 @@
         <div class="flex justify-center items-center md:w-screen h-1/2 md:h-full">
             <div class="flex flex-col justify-start md:w-4/6 lg:w-3/6">
                 <h3 class="text-[2rem] font-medium tracking-tighter">로그인</h3>
-                <span class="text-[0.9rem] font-normal text-primaryColor mb-3 cursor-pointer">회원가입</span>
+                <span class="text-[0.9rem] font-normal text-primary mb-3 cursor-pointer">회원가입</span>
 
                 <div class="flex">
-                    <CheckMenu class="mr-2" name="사용자" color="#6950E8" />
-                    <CheckMenu name="관리자" color="#6950E8" />
+                    <CheckMenu class="mr-2" name="사용자" color="primary" />
+                    <CheckMenu name="관리자" color="primary" />
                 </div>
 
                 <Spacer height="1rem" />
@@ -52,7 +52,7 @@
                     <Spacer height="1rem" />
 
                     <button @click="routeToMonitoring()"
-                        class=" text-white w-full bg-primaryColor rounded-md text-[0.9rem] py-3">
+                        class=" text-white w-full bg-primary rounded-md text-[0.9rem] py-3">
 
                         <span class="hover:animate-ping">
                             로그인

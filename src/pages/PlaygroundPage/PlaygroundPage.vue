@@ -1,5 +1,5 @@
 <template>
-    <!-- <LeftSideBar :menu-list="menuList" /> -->
+  
     <div class="flex">
 
 
@@ -273,8 +273,8 @@
                                         <span>좋음</span>
                                         <span class="mb-2">
                                             (0~16)</span>
-                                        <ProgressBar class="mb-2" barWidth="70" :percentage="100" barColor="#6950e8"
-                                            backgroundColor="#6950e8" />
+                                        <ProgressBar class="mb-2" barWidth="70" :percentage="100" barColor="primary"
+                                            backgroundColor="primary" />
                                         <img class="w-[1.5rem]" src="/assets/icon/fi-rr-smile.svg" />
                                     </div>
                                     <div class="flex flex-col items-center mr-2">
@@ -327,13 +327,13 @@
                                     </div>
                                     <div class="flex items-center">
                                         <span class="w-[100px] text-gray-500">일산화탄소</span>
-                                        <ProgressBar barWidth="100" :percentage="30" barColor="#6950e8"
+                                        <ProgressBar barWidth="100" :percentage="30" barColor="primary"
                                             backgroundColor="#e5e7eb" />
                                         <span class="ml-auto w-[80px]">0.008ppm</span>
                                     </div>
                                     <div class="flex items-center">
                                         <span class="w-[100px] text-gray-500">기타</span>
-                                        <ProgressBar barWidth="100" :percentage="10" barColor="#6950e8"
+                                        <ProgressBar barWidth="100" :percentage="10" barColor="primary"
                                             backgroundColor="#e5e7eb" />
                                         <span class="ml-auto w-[80px]">0.008ppm</span>
                                     </div>
@@ -349,7 +349,7 @@
                     </div>
                     <div class="w-2/3 flex flex-col">
                         <span class="text-gray-500 text-[20px] mr-2 font-semibold">과거데이터 조회</span>
-                        <span class=" text-[24px] text-[#6950E8] mr-2 font-semibold">$18,469</span>
+                        <span class=" text-[24px] text-[primary] mr-2 font-semibold">$18,469</span>
                         <div class="flex justify-between items-center">
                             <div class="flex">
                                 <span class="mr-2 text-gray-500">This month</span>
@@ -601,8 +601,6 @@
 
 import Spacer from "@/components/Spacer.vue";
 
-import LeftSideBar from "@/components/LeftSideBar.vue"
-
 import TitleBox from "@/components/TitleBox.vue"
 
 import VViewer from "@/components/VViewer.vue";
@@ -680,7 +678,7 @@ export default {
 
         };
     },
-    components: { Spacer, LeftSideBar, TitleBox, VViewer, Layout, KanbanBoard, OperationChart, WaterUsageChart, WaterInfoChart, GreenGasChart, GreenGasBarChart, AirPollutionChart, WasteChart, WasteLineChart, ProgressBar }
+    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, OperationChart, WaterUsageChart, WaterInfoChart, GreenGasChart, GreenGasBarChart, AirPollutionChart, WasteChart, WasteLineChart, ProgressBar }
 
 };
 </script>

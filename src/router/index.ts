@@ -9,6 +9,7 @@ import MainPage from '../pages/MainPage.vue';
 import Login from '../pages/Login.vue';
 import MonitoringVue from '../pages/User/Monitoring/Monitoring.vue';
 import PlaygroundPageVue from '@/pages/PlaygroundPage/PlaygroundPage.vue';
+import FacilityManagementVue from '../pages/User/FacilityManagement/FacilityManagement.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -25,6 +26,11 @@ const routes: Array<RouteRecordRaw> = [
     component: MonitoringVue,
     path: '/monitoring',
     name: 'monitoring',
+  },
+  {
+    component: FacilityManagementVue,
+    path: '/facility-management',
+    name: 'facilityManagement',
   },
   {
     component: PlaygroundPageVue,
@@ -45,7 +51,7 @@ const router: Router = createRouter({
 });
 
 router.afterEach((to) => {
-  const baseTitle = 'Vue + TypeScript + Vite';
+  const baseTitle = to.name;
 
   if (to.name === 'index') {
     document.title = baseTitle;

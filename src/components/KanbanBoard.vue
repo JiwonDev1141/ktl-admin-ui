@@ -19,7 +19,7 @@
                 <span class="text-sm">전일대비 사용량</span>
                 <div class="flex justify-between items-center">
                     <span class="text-[32px] font-semibold">+ 123</span>
-                    <div class="bg-[#ef47701a] text-[#EF4770] font-bold rounded-[16px] px-4 py-2 text-[12px]">+12.5%
+                    <div class="bg-[#ef47701a] text-primary font-bold rounded-[16px] px-4 py-2 text-[12px]">+12.5%
                     </div>
                 </div>
             </div>
