@@ -1,6 +1,6 @@
 <template>
 <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet">
-  <LeftSideBar v-if="state.isLoginPage === false" :menuList=menuList />
+  <LeftSideBar v-if="state.isLoginPage === false" :menuList=menuList :username="username" />
   <RouterView />
 </template>
   
@@ -79,6 +79,8 @@ const menuList: Array<menu> = window.localStorage.getItem("user_role") === 'USER
             },
 
         ]
+
+const username = window.localStorage.getItem("user_role") === 'USER' ? '사용자1' : '관리자1'
 
 
 </script>

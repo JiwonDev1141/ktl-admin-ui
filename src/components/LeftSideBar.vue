@@ -81,7 +81,7 @@
                 <div class="rounded-full p-4 bg-gray-300 w-[3rem] h-[3rem] mb-3 flex items-center justify-center">
                     <img src="/assets/icon/user.png" />
                 </div>
-                <span class="font-bold text-md">사용자 1</span>
+                <span class="font-bold text-md">{{username}}</span>
                 <span>rockwonit1</span>
             </div>
 
@@ -131,6 +131,10 @@ defineProps({
                 ]
             }
         ]
+    },
+    username: {
+        type: String,
+        default: '사용자1',
     }
 })
 
