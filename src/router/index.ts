@@ -12,6 +12,7 @@ import PlaygroundPageVue from '@/pages/PlaygroundPage/PlaygroundPage.vue';
 import FacilityManagementVue from '@/pages/User/FacilityManagement/FacilityManagement.vue';
 import AdminMonitoringVue from '@/pages/adminUser/Monitoring/AdminMonitoring.vue';
 import AdminStatisticsVue from '@/pages/adminUser/Statistics/AdminStatistics.vue';
+import EnergyManagementVue from '../pages/User/EnergyManagement/EnergyManagement.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -35,12 +36,18 @@ const routes: Array<RouteRecordRaw> = [
     name: 'facilityManagement',
   },
   {
+    component: EnergyManagementVue,
+    path: '/energy-management',
+    name: 'energyManagement',
+  },
+  {
     component: PlaygroundPageVue,
     path: '/playground',
     name: 'playground',
   },
   {
-    component: AdminMonitoringVue,
+    // component: AdminMonitoringVue,
+    component: MonitoringVue,
     path: '/admin/monitoring',
     name: 'admin-monitoring',
   },

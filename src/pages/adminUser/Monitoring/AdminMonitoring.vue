@@ -207,7 +207,9 @@
                                             +2.65%</div>
                                     </div>
                                 </div>
-                                <GreenGasDayChart />
+                                <div class="flex justify-center w-full h-full">
+                                    <GreenGasDayChart />
+                                </div>
         
         </div>
         <div class="w-1/2 flex flex-col border-solid border-2 
