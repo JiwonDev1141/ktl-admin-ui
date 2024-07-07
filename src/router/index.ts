@@ -5,11 +5,13 @@ import {
   RouteRecordRaw,
 } from 'vue-router';
 
-import MainPage from '../pages/MainPage.vue';
-import Login from '../pages/Login.vue';
-import MonitoringVue from '../pages/User/Monitoring/Monitoring.vue';
+import MainPage from '@/pages/MainPage.vue';
+import Login from '@/pages/Login.vue';
+import MonitoringVue from '@/pages/User/Monitoring/Monitoring.vue';
 import PlaygroundPageVue from '@/pages/PlaygroundPage/PlaygroundPage.vue';
-import FacilityManagementVue from '../pages/User/FacilityManagement/FacilityManagement.vue';
+import FacilityManagementVue from '@/pages/User/FacilityManagement/FacilityManagement.vue';
+import AdminMonitoringVue from '@/pages/adminUser/Monitoring/AdminMonitoring.vue';
+import AdminStatisticsVue from '@/pages/adminUser/Statistics/AdminStatistics.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -36,6 +38,16 @@ const routes: Array<RouteRecordRaw> = [
     component: PlaygroundPageVue,
     path: '/playground',
     name: 'playground',
+  },
+  {
+    component: AdminMonitoringVue,
+    path: '/admin/monitoring',
+    name: 'admin-monitoring',
+  },
+  {
+    component: AdminStatisticsVue,
+    path: '/admin/statistics',
+    name: 'admin-statistics',
   },
   //   {
   //     component: Example,

@@ -15,7 +15,7 @@
 
 </template>
 <script lang="ts" setup>
-import { reactive } from "vue"
+
 defineProps({
     barWidth: {
         defaultValue: '130px',

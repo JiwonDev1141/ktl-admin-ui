@@ -13,6 +13,11 @@ const meta: Meta<typeof SelectBox> = {
   component: SelectBox,
 };
 
+interface menuList {
+  name: string;
+  value: string;
+}
+
 export default meta;
 type Story = StoryObj<typeof SelectBox>;
 
@@ -30,5 +35,28 @@ export const Primary: Story = {
     <SelectBox v-bind="args">{{ args.default }}</SelectBox>
     `,
   }),
-  args: {},
+  args: {
+    menuList: [
+      {
+        name: '클린룸',
+        value: 'CLEAN_ROOM',
+      },
+      {
+        name: '공조실',
+        value: 'AIR_CONDITIONING_ROOM',
+      },
+      {
+        name: '사무동',
+        value: 'OFFICE_BUILDING_ROOM',
+      },
+      {
+        name: '합성실',
+        value: 'SYNTHETIC_ROOM',
+      },
+      {
+        name: '주입실',
+        value: 'INFUSION_ROOM',
+      },
+    ],
+  },
 };

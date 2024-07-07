@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex flex-col justify-between fixed h-full border-r-1 bg-gray-100 w-screen md:w-[240px] p-[20px] text-[14px]">
+        class="flex flex-col justify-between fixed h-full border-r-1 bg-gray-100 w-screen sm:w-[240px] p-[20px] text-[14px]">
 
         <div>
             <svg width="30" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +87,7 @@
 
             <div class="flex justify-center mt-10">
                 <img class="w-[24px] h-[24px] mr-[15%]" src="/assets/icon/logout.png" />
-                <span @click="handleLogout" class="font-bold">Logout</span>
+                <span @click="handleLogout" class="font-bold cursor-pointer">Logout</span>
             </div>
 
         </div>

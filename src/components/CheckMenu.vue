@@ -1,21 +1,22 @@
 <template>
-    <div @click="state.isChecked = !state.isChecked" class="flex items-center cursor-pointer">
-        <input :checked="state.isChecked" :style="`accent-color: ${color}`" class="mr-2" type="checkbox" />
-        <span :class="`text-[0.9rem]`" :style="state.isChecked ? `color: ${color}` : null">{{ name }}</span>
+    <div class="flex items-center cursor-pointer">
+        <input @change="handleCheck" :checked="checked" :style="`accent-color: ${color}`" class="mr-2" type="checkbox" />
+        <span :class="`text-[0.9rem]`" :style="checked ? `color: ${color}` : null">{{ name }}</span>
     </div>
 </template>
 
 <script lang="ts" setup>
-import { reactive } from 'vue'
+
 
 defineProps({
     color: String,
     name: String,
+
+    checked: Boolean
 })
 
-const state = reactive({
-    isChecked: false
-})
+
+
 
 </script>
 <style scoped>

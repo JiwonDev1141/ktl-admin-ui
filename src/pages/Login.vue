@@ -32,8 +32,8 @@
                 <span class="text-[0.9rem] font-normal text-primary mb-3 cursor-pointer">회원가입</span>
 
                 <div class="flex">
-                    <CheckMenu class="mr-2" name="사용자" color="primary" />
-                    <CheckMenu name="관리자" color="primary" />
+                    <CheckMenu :checked="state.selectedUserRole === 'USER'" @click="state.selectedUserRole = 'USER'" class="mr-2" name="사용자" color="primary" />
+                    <CheckMenu :checked="state.selectedUserRole === 'ADMIN'" @click="state.selectedUserRole = 'ADMIN'" name="관리자" color="primary" />
                 </div>
 
                 <Spacer height="1rem" />
@@ -51,7 +51,7 @@
                     <PasswordInput :apply-hide-btn="true" placeholder="Password" />
                     <Spacer height="1rem" />
 
-                    <button @click="routeToMonitoring()"
+                    <button @click="handleLogin()"
                         class=" text-white w-full bg-primary rounded-md text-[0.9rem] py-3">
 
                         <span class="hover:animate-ping">
@@ -77,6 +77,7 @@ import FormInput from "../components/FormInput.vue";
 import PasswordInput from "../components/PasswordInput.vue"
 import CodeMirror from "../components/common/CodeMirror.vue"
 import router from "../router";
+import { reactive } from "vue";
 export default {
 
 
@@ -92,15 +93,36 @@ export default {
 
         ]
 
-        const routeToMonitoring = () => {
+        const state = reactive({
+            selectedUserRole: 'USER'
+        })
+
+        const handleLogin = () => {
+            if(state.selectedUserRole === 'USER') {
+                routeToUserMonitoring()
+            }
+            
+            if(state.selectedUserRole === 'ADMIN') {
+                routeToAdminMonitoring()
+            }
+        }
+
+        const routeToUserMonitoring = () => {
             router.push("/monitoring")
+        }
+
+        const routeToAdminMonitoring = () => {
+            router.push("/admin/monitoring")
         }
 
 
 
         return {
             logoList,
-            routeToMonitoring
+            routeToUserMonitoring,
+            routeToAdminMonitoring,
+            state,
+            handleLogin
         };
     },
     components: { AppButton, KanbanBoard, CheckMenu, Spacer, FormInput, PasswordInput, CodeMirror }
