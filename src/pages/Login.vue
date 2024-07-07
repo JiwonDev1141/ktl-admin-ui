@@ -99,11 +99,16 @@ export default {
 
         const handleLogin = () => {
             if(state.selectedUserRole === 'USER') {
-                routeToUserMonitoring()
+                window.localStorage.setItem("user_role", "USER")
+                // routeToUserMonitoring()
+                window.location.href="/monitoring"
             }
             
             if(state.selectedUserRole === 'ADMIN') {
-                routeToAdminMonitoring()
+                window.localStorage.setItem("user_role", "ADMIN")
+                // routeToAdminMonitoring()
+                window.location.href="/admin/monitoring"
+
             }
         }
 
