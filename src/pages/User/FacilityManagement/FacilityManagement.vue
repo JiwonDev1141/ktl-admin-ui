@@ -12,8 +12,8 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-wrap">
-            <div class="w-2/4">
+        <div class="xl:flex">
+            <div class="xl:w-2/4">
                 <div class="flex flex-wrap justify-between px-3 py-3">
                     <div class="flex items-center">
                         <span class="font-semibold text-[0.8rem] mr-3">작업 공정</span>
@@ -77,125 +77,128 @@
 
             </div>
 
-            <div class="w-1/4 flex flex-col border-solid border-2
-                border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3">
-                <span class="mr-2 font-semibold">가동 종합 현황</span>
+            <div class="flex">
+                <div class="w-2/4 flex flex-col border-solid border-2
+                    border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3">
+                    <span class="mr-2 font-semibold">가동 종합 현황</span>
 
-                <div class="flex items-center">
-                    <span class="text-black text-[1.4rem] mr-2 font-semibold">123,123 khw</span>
-                    <div class="bg-[#E7F8F3] text-[#11B886] text-[0.8rem] font-bold rounded-[16px] px-3 py-1">
-                        +4.67%
+                    <div class="flex items-center">
+                        <span class="text-black text-[1.4rem] mr-2 font-semibold">123,123 khw</span>
+                        <div class="bg-[#E7F8F3] text-[#11B886] text-[0.8rem] font-bold rounded-[16px] px-3 py-1">
+                            +4.67%
+                        </div>
                     </div>
+                    <span class="text-[0.9rem] text-gray-500">누적 사용 전력</span>
+                    <div class="h-full flex flex-col justify-center">
+                        <div class="flex justify-between my-2">
+                            <div class="flex">
+                                <img class="mr-2" src="/assets/icon/Avatar.svg" />
+                                <div class="flex flex-col">
+                                    <span class="text-[0.9rem]">금일 사용량</span>
+                                    <span class="text-[0.8rem] text-gray-500">500 ships</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <div class="text-[0.9rem] font-bold">503,68,258</div>
+                                <div class="text-[0.8rem] text-gray-500">kwh</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between my-2">
+                            <div class="flex">
+                                <img class="mr-2" src="/assets/icon/Avatar-1.svg" />
+                                <div class="flex flex-col">
+                                    <span class="text-[0.9rem]">전일 사용량</span>
+                                    <span class="text-[0.8rem] text-gray-500">25 planes</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <div class="text-[0.9rem] font-bold">23,36,569</div>
+                                <div class="text-[0.8rem] text-gray-500">Tons</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between my-2">
+                            <div class="flex">
+                                <img class="mr-2" src="/assets/icon/Avatar-2.svg" />
+                                <div class="flex flex-col">
+                                    <span class="text-[0.9rem]">온실가스 배출량</span>
+                                    <span class="text-[0.8rem] text-gray-500">2500 Trucks</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <div class="text-[0.9rem] font-bold">365,66,547</div>
+                                <div class="text-[0.8rem] text-gray-500">Tons</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between my-2">
+                            <div class="flex">
+                                <img class="mr-2" src="/assets/icon/Avatar-3.svg" />
+                                <div class="flex flex-col">
+                                    <span class="text-[0.9rem]">오염물 처리량</span>
+                                    <span class="text-[0.8rem] text-gray-500">1000 Trains</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <div class="text-[0.9rem] font-bold">102,36,482</div>
+                                <div class="text-[0.8rem] text-gray-500">Tons</div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between my-2">
+                            <div class="flex">
+                                <img class="mr-2" src="/assets/icon/Avatar-4.svg" />
+                                <div class="flex flex-col">
+                                    <span class="text-[0.9rem]">기타</span>
+                                    <span class="text-[0.8rem] text-gray-500">1175 ships</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <div class="text-[0.9rem] font-bold">120,58,147</div>
+                                <div class="text-[0.8rem] text-gray-500">Tons</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
                 </div>
-                <span class="text-[0.9rem] text-gray-500">누적 사용 전력</span>
-                <div class="h-full flex flex-col justify-center">
-                    <div class="flex justify-between my-2">
-                        <div class="flex">
-                            <img class="mr-2" src="/assets/icon/Avatar.svg" />
-                            <div class="flex flex-col">
-                                <span class="text-[0.9rem]">금일 사용량</span>
-                                <span class="text-[0.8rem] text-gray-500">500 ships</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-end">
-                            <div class="text-[0.9rem] font-bold">503,68,258</div>
-                            <div class="text-[0.8rem] text-gray-500">kwh</div>
-                        </div>
-                    </div>
 
-                    <div class="flex justify-between my-2">
-                        <div class="flex">
-                            <img class="mr-2" src="/assets/icon/Avatar-1.svg" />
-                            <div class="flex flex-col">
-                                <span class="text-[0.9rem]">전일 사용량</span>
-                                <span class="text-[0.8rem] text-gray-500">25 planes</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-end">
-                            <div class="text-[0.9rem] font-bold">23,36,569</div>
-                            <div class="text-[0.8rem] text-gray-500">Tons</div>
-                        </div>
+                <div class="w-2/4 flex flex-col">
+                    <div class=" flex flex-col border-solid border-2
+                        border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3 h-[200px]">
+                        <span class="mr-2 font-semibold">가동 누적 시간</span>
+                        <span class="mb-[50px]">24 H</span>
+                        <ProgressBar barWidth="200" :percentage="50" barColor="#6950e8" backgroundColor="#e5e7eb" />
+                        <span class="ml-auto text-[0.8rem] text-gray-500">24H/60H</span>
                     </div>
-
-                    <div class="flex justify-between my-2">
-                        <div class="flex">
-                            <img class="mr-2" src="/assets/icon/Avatar-2.svg" />
-                            <div class="flex flex-col">
-                                <span class="text-[0.9rem]">온실가스 배출량</span>
-                                <span class="text-[0.8rem] text-gray-500">2500 Trucks</span>
+                    <div class=" flex flex-col border-solid border-2
+                        border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3 h-[350px]">
+                        <span class="mr-2 font-semibold mb-4">설비 가동 시간</span>
+                        <div class="flex flex-col items-center justify-center h-full">
+                            <div class="w-[100%] flex justify-center">
+                                <OperationTimeChart />
                             </div>
-                        </div>
-                        <div class="flex flex-col items-end">
-                            <div class="text-[0.9rem] font-bold">365,66,547</div>
-                            <div class="text-[0.8rem] text-gray-500">Tons</div>
-                        </div>
-                    </div>
 
-                    <div class="flex justify-between my-2">
-                        <div class="flex">
-                            <img class="mr-2" src="/assets/icon/Avatar-3.svg" />
-                            <div class="flex flex-col">
-                                <span class="text-[0.9rem]">오염물 처리량</span>
-                                <span class="text-[0.8rem] text-gray-500">1000 Trains</span>
+                            <div class="flex items-center mt-4">
+                                <div class="rounded-full w-[8px] h-[8px] bg-primary mr-1 "></div>
+                                <span>
+                                    금일 가동시간
+                                </span>
+                                <div class="mx-2"></div>
+                                <div class="rounded-full w-[8px] h-[8px] bg-[#6B7280] mr-1 "></div>
+                                <span>평균 가동시간</span>
                             </div>
-                        </div>
-                        <div class="flex flex-col items-end">
-                            <div class="text-[0.9rem] font-bold">102,36,482</div>
-                            <div class="text-[0.8rem] text-gray-500">Tons</div>
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between my-2">
-                        <div class="flex">
-                            <img class="mr-2" src="/assets/icon/Avatar-4.svg" />
-                            <div class="flex flex-col">
-                                <span class="text-[0.9rem]">기타</span>
-                                <span class="text-[0.8rem] text-gray-500">1175 ships</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-end">
-                            <div class="text-[0.9rem] font-bold">120,58,147</div>
-                            <div class="text-[0.8rem] text-gray-500">Tons</div>
                         </div>
                     </div>
 
                 </div>
-
-
 
 
             </div>
-
-            <div class="w-1/4 flex flex-col">
-                <div class=" flex flex-col border-solid border-2
-                    border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3 h-[200px]">
-                    <span class="mr-2 font-semibold">가동 누적 시간</span>
-                    <span class="mb-[50px]">24 H</span>
-                    <ProgressBar barWidth="200" :percentage="50" barColor="#6950e8" backgroundColor="#e5e7eb" />
-                    <span class="ml-auto text-[0.8rem] text-gray-500">24H/60H</span>
-                </div>
-                <div class=" flex flex-col border-solid border-2
-                    border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3 h-[350px]">
-                    <span class="mr-2 font-semibold mb-4">설비 가동 시간</span>
-                    <div class="flex flex-col items-center justify-center h-full">
-                        <div class="w-[100%] flex justify-center">
-                            <OperationTimeChart />
-                        </div>
-
-                        <div class="flex items-center mt-4">
-                            <div class="rounded-full w-[8px] h-[8px] bg-primary mr-1 "></div>
-                            <span>
-                                금일 가동시간
-                            </span>
-                            <div class="mx-2"></div>
-                            <div class="rounded-full w-[8px] h-[8px] bg-[#6B7280] mr-1 "></div>
-                            <span>평균 가동시간</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
 
         </div>
 

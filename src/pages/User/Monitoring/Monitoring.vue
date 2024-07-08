@@ -7,8 +7,8 @@
     <div class="mr-[20px]" :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" text="IOT 스마트 생태공장 통합 대시보드" />
 
-        <div class="flex">
-            <div class="w-1/2 h-full ">
+        <div class="xl:flex">
+            <div class="xl:w-1/2 h-full ">
                 <div class="w-full flex  border-solid border-2 
                 border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 pt-3 ">
 
@@ -133,7 +133,7 @@
 
 
                 </div>
-                <div @click="setShowPollutionPopup(true)" class="w-2/3 flex flex-col border-solid border-2 
+                <div @click="setShowPollutionPopup(true)" class="xl:w-2/3 flex flex-col border-solid border-2 
             border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center">
@@ -186,7 +186,7 @@
                 </div>
 
             </div>
-            <div class="w-1/2">
+            <div class="xl:w-1/2">
                 <div class="flex">
                     <div @click="setShowGreenGasPopup(true)" class="w-1/2 flex flex-col border-solid border-2 
             border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-4 px-4 ">

@@ -3,8 +3,8 @@
     <div class="mr-[20px]" :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" text="통계 / 분석" />
 
-        <div class="flex">
-            <div class="w-1/2 h-full ">
+        <div class="xl:flex">
+            <div class="xl:w-1/2 h-full ">
                 <div class="w-full flex border-solid border-2 
                 border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 pt-3 ">
 
@@ -78,7 +78,7 @@
                 </div>
 
             </div>
-            <div class="w-1/2">
+            <div class="xl:w-1/2">
                 <div class="flex">
                     <div class="w-1/2 flex flex-col border-solid border-2 
             border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
