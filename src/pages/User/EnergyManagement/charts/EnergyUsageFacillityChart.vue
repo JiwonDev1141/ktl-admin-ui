@@ -1,6 +1,6 @@
 <template>
 
-    <div >
+    <div>
         <canvas style="width: 60%;  height: 60%; min-width: 150px;" ref="MyChart" />
     </div>
 
@@ -20,7 +20,7 @@ export default {
 
             ],
             datasets: [{
-//                
+                //                
                 data: [800, 1000, 1200, 1200, 1200],
                 backgroundColor: [
                     '#6950E8',
@@ -28,7 +28,7 @@ export default {
                     '#EF4770',
                     '#111827',
                     '#6B7280',
-               
+
 
                 ],
                 cutout: "80%",

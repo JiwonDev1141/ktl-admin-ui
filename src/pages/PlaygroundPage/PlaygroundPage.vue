@@ -1,5 +1,5 @@
 <template>
-  
+
     <div class="flex">
 
 
@@ -467,16 +467,16 @@
 
                                 <div class="text-[0.9rem] px-4">
                                     <div class="flex items-center justify-between py-2">
-                              
-                                           <span class="text-gray-500 font-semibold">이벤트 명</span>
-                                  
-                                      
-                                            <span class="text-gray-500 font-semibold">발생 일시</span>
 
-                                    
+                                        <span class="text-gray-500 font-semibold">이벤트 명</span>
+
+
+                                        <span class="text-gray-500 font-semibold">발생 일시</span>
+
+
                                         <span class="text-gray-500 font-semibold">발생 장소</span>
 
-                                    
+
                                         <span class="text-gray-500 font-semibold">이벤트 등급</span>
 
 
@@ -492,9 +492,9 @@
                                             <span class="font-semibold">2024-05-10</span>
                                             <span class="text-[0.8rem] text-gray-500">17:23:10</span>
                                         </div>
-                                    
+
                                         <span class=" w-[80px] text-center">합성실</span>
-                                    
+
                                         <div
                                             class="w-[80px] text-center bg-[#FDEDF1] text-[#EF4770] text-[12px] font-bold rounded-[16px] px-2 py-1">
                                             CRITICAL</div>
@@ -511,9 +511,9 @@
                                             <span class="font-semibold">2024-05-10</span>
                                             <span class="text-[0.8rem] text-gray-500">17:24:30</span>
                                         </div>
-                                    
+
                                         <span class=" w-[80px] text-center">합성실</span>
-                                    
+
                                         <div
                                             class="w-[80px] text-center bg-[#fff9e6] text-[#db7e24] text-[12px] font-bold rounded-[16px] px-2 py-1">
                                             MAJOR</div>
@@ -530,9 +530,9 @@
                                             <span class="font-semibold">2024-05-10</span>
                                             <span class="text-[0.8rem] text-gray-500">17:24:10</span>
                                         </div>
-                                    
+
                                         <span class=" w-[80px] text-center">주입실</span>
-                                    
+
                                         <div
                                             class="w-[80px] text-center bg-[#FDEDF1] text-[#EF4770] text-[12px] font-bold rounded-[16px] px-2 py-1">
                                             CRITICAL</div>

@@ -1,7 +1,7 @@
 <template>
 
 
-    <canvas  ref="MyChart" />
+    <canvas ref="MyChart" />
 
 </template>
 
@@ -15,7 +15,7 @@ Chart.register(...registerables)
 export default {
     data: () => ({
         type: 'doughnut',
-     
+
         data: {
             labels: [
                 "운영중",
@@ -29,7 +29,7 @@ export default {
                     '#2ae8c9',
                     '#cacaca',
                     '#999999',
-                 
+
                 ],
                 // cutout: "80%",
 
@@ -40,15 +40,15 @@ export default {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
-      thickness: {
-        thickness: [
-            [90, 160],
-            [100, 140],
-            [100, 140],
-       
-        ],
-      },
-    },
+                thickness: {
+                    thickness: [
+                        [90, 160],
+                        [100, 140],
+                        [100, 140],
+
+                    ],
+                },
+            },
             // rotation: -90,
             // circumference: 180,
             // scales: {
@@ -56,7 +56,7 @@ export default {
             //         beginAtZero: true
             //     }
             // },
-     
+
 
 
         },
@@ -73,8 +73,8 @@ export default {
                 beforeDraw: function (chart, options) {
                     let thickness = chart.options.plugins.thickness.thickness;
                     thickness.forEach((item, index) => {
-                    chart.getDatasetMeta(0).data[index].innerRadius = item[0];
-                    chart.getDatasetMeta(0).data[index].outerRadius = item[1];
+                        chart.getDatasetMeta(0).data[index].innerRadius = item[0];
+                        chart.getDatasetMeta(0).data[index].outerRadius = item[1];
                     });
                 },
             };

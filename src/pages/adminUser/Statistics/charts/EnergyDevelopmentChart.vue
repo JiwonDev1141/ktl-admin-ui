@@ -23,22 +23,22 @@ export default {
                 'Day 4',
                 'Day 5',
                 'Day 6',
-            
+
 
 
             ],
             datasets: [
-            {
+                {
 
-                label: '이번주',
-                data: [-20, 0, -60, -60, 0, 60, 60],
-                borderColor: '#3357BD',
-                backgroundColor: '#3357BD',
-                stepped: 'after',
-                tension: 0,
-                
+                    label: '이번주',
+                    data: [-20, 0, -60, -60, 0, 60, 60],
+                    borderColor: '#3357BD',
+                    backgroundColor: '#3357BD',
+                    stepped: 'after',
+                    tension: 0,
 
-            },
+
+                },
                 {
 
 
@@ -48,13 +48,13 @@ export default {
                     data: [0, 20, -20, -20, 20, 60],
                     borderColor: '#febf06',
                     backgroundColor: '#febf06',
-                   
+
                     stepped: 'after',
-               
+
                     tension: 0
                 },
-             
-             
+
+
             ]
         },
         options: {

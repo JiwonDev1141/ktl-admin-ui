@@ -40,14 +40,14 @@ export default {
                     borderWidth: 1
                 },
 
-          
+
 
             ]
         },
         options: {
             responsive: false,
             maintainAspectRatio: true,
-            
+
             scales: {
                 xAxes: [{
                     barPercentage: 1,

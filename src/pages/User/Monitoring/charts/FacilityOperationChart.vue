@@ -25,7 +25,7 @@ export default {
                     '#11B886',
                     '#EF4770',
                     '#FEBF06',
-                 
+
                 ],
                 cutout: "90%",
 

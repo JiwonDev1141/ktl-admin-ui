@@ -1,8 +1,7 @@
 <template>
 
-    <div >
-        <canvas style="width: 80%;  height: 80%; min-width: 150px;" ref="MyChart" />
-    </div>
+
+    <canvas style="max-width: 250px; max-height: 250px;" ref="MyChart" />
 
 </template>
 
@@ -13,36 +12,30 @@ Chart.register(...registerables)
 
 export default {
     data: () => ({
-        type: 'pie',
+        type: 'doughnut',
 
         data: {
             labels: [
-            "총 발전량",
-            "재사용 에너지"
+
             ],
             datasets: [{
-          
-                data: [80000, 40000],
+
+                data: [10, 13],
                 backgroundColor: [
+                    '#6B7280',
                     '#6950E8',
-      
-                    '#EF4770',
-                
-               
 
                 ],
-       
+                cutout: "80%",
 
-              
+                hoverOffset: 4
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: true,
-              plugins: {
-   
-    }
-         
+            rotation: -90,
+            circumference: 180,
             // scales: {
             //     y: {
             //         beginAtZero: true
@@ -59,26 +52,31 @@ export default {
     },
     methods: {
         createChart() {
-            // const myPlugin = {
-            //     id: 'myPlugin',
-            //     beforeDraw: (chart) => {
-            //         const ctx = chart.ctx;
-            //         const xCoor = chart.chartArea.left + (chart.chartArea.right - chart.chartArea.left) / 2;
-            //         const yCoor = chart.chartArea.top + (chart.chartArea.bottom - chart.chartArea.top) / 2;
-            //         ctx.save();
-            //         ctx.font = 'bold 24px Courier';
-            //         ctx.fillStyle = 'black';
-            //         ctx.textAlign = 'center';
-            //         ctx.textBaseline = 'middle';
-            //         ctx.fillText(`124대`, xCoor, yCoor);
-            //         ctx.restore();
-            //     },
-            // }
+            const myPlugin = {
+                id: 'myPlugin',
+                beforeDraw: (chart) => {
+                    const ctx = chart.ctx;
+                    const xCoor = chart.chartArea.left + (chart.chartArea.right - chart.chartArea.left) / 2;
+                    const yCoor = chart.chartArea.top + (chart.chartArea.bottom - chart.chartArea.top) / 1.4;
+                    ctx.save();
+                    ctx.font = ' 14px Inter';
+                    ctx.fillStyle = 'gray';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(`에너지 저감률`, xCoor, yCoor);
+
+                    ctx.fillStyle = 'black';
+                    ctx.font = ' 24px Inter';
+                    ctx.fillText(`40%`, xCoor, yCoor + 20);
+
+                    ctx.restore();
+                },
+            }
             new Chart(this.$refs.MyChart, {
-                type: 'pie',
+                type: 'doughnut',
                 data: this.data,
                 options: this.options,
-                // plugins: [myPlugin]
+                plugins: [myPlugin]
             })
 
         }

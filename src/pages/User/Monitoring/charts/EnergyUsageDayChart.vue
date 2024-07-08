@@ -57,7 +57,7 @@ export default {
         options: {
             responsive: false,
             maintainAspectRatio: true,
-            
+
             scales: {
                 y: {
                     beginAtZero: true

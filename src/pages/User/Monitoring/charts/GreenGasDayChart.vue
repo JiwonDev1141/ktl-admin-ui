@@ -1,6 +1,6 @@
 <template>
 
-    <div >
+    <div>
         <canvas style="width: 80%;  height: 80%; min-width: 150px;" ref="MyChart" />
     </div>
 
@@ -17,15 +17,15 @@ export default {
 
         data: {
             labels: [
-            "CO2",
-            "PH1",
-            "N20",
-            "HFCS",
-            "PFCS"
+                "CO2",
+                "PH1",
+                "N20",
+                "HFCS",
+                "PFCS"
             ],
             datasets: [{
-          
-                data: [20000, 30000,15000,15000,17500],
+
+                data: [20000, 30000, 15000, 15000, 17500],
                 backgroundColor: [
                     '#6950e8',
                     '#EF4770',
@@ -33,22 +33,22 @@ export default {
                     '#11b886',
                     '#febf06'
 
-                
-               
+
+
 
                 ],
-       
 
-              
+
+
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: true,
-              plugins: {
-   
-    }
-         
+            plugins: {
+
+            }
+
             // scales: {
             //     y: {
             //         beginAtZero: true

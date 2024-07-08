@@ -1,6 +1,6 @@
 <template>
 
-    <div >
+    <div>
         <canvas style="width: 100%;  height: 100%;" ref="MyChart" />
     </div>
 
@@ -16,16 +16,16 @@ export default {
         type: 'doughnut',
 
         data: {
-         
+
             datasets: [{
-//                
-                data: [800, 1000, 1200, ],
+                //                
+                data: [800, 1000, 1200,],
                 backgroundColor: [
                     '#11b886',
                     '#ef4770',
-             
+
                     '#E5E7EB',
-               
+
 
                 ],
                 cutout: "80%",

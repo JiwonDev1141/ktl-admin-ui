@@ -1,6 +1,6 @@
 <template>
 
-    <div >
+    <div>
         <canvas style="width: 80%;  height: 80%; min-width: 150px;" ref="MyChart" />
     </div>
 
@@ -17,32 +17,32 @@ export default {
 
         data: {
             labels: [
-            "총 발전량",
-            "재사용 에너지"
+                "총 발전량",
+                "재사용 에너지"
             ],
             datasets: [{
-          
+
                 data: [80000, 40000],
                 backgroundColor: [
                     '#6950E8',
-      
+
                     '#EF4770',
-                
-               
+
+
 
                 ],
-       
 
-              
+
+
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: true,
-              plugins: {
-   
-    }
-         
+            plugins: {
+
+            }
+
             // scales: {
             //     y: {
             //         beginAtZero: true

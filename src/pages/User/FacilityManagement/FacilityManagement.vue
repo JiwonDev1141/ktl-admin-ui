@@ -1,13 +1,14 @@
 <template>
+
     <body :style="`margin-left:${leftSideBarWidth}`">
         <div class="flex mr-[20px]">
-    
-    
+
+
             <div class="flex overflow-y-auto w-full">
                 <!-- <div style="margin-left: 2rem;"></div> -->
                 <div class="w-full ">
                     <TitleBox width="100%" text="가동 설비 관리" />
-                   
+
                 </div>
             </div>
         </div>
@@ -16,16 +17,17 @@
                 <div class="flex flex-wrap justify-between px-3 py-3">
                     <div class="flex items-center">
                         <span class="font-semibold text-[0.8rem] mr-3">작업 공정</span>
-            
-                   
-                        <SelectBox width="250px" :callback="(value) => {console.log(value)}" :menuList="workList" />
+
+
+                        <SelectBox width="250px" :callback="(value) => { console.log(value) }" :menuList="workList" />
                     </div>
                     <div class="flex items-center">
                         <span class="font-semibold text-[0.8rem] mr-3">운영 설비</span>
-            
-                        <SelectBox width="250px" :callback="(value) => {console.log(value)}" :menuList="operationList" />
+
+                        <SelectBox width="250px" :callback="(value) => { console.log(value) }"
+                            :menuList="operationList" />
                     </div>
-        
+
                 </div>
                 <div class="w-full flex flex-col border-solid border-2 bg-[#F8F8F8]
                 border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3 h-[500px]">
@@ -37,7 +39,7 @@
                             </div>
                             <div class="flex items-center">
                                 <span class="text-[0.8rem] text-gray-500 mr-2">가동상태</span>
-                              
+
                                 <div
                                     class="bg-[#E7F8F3] text-[#11B886] text-[0.8rem] font-bold rounded-[16px] px-3 py-1">
                                     정상
@@ -55,7 +57,7 @@
                                     <span>가동시간</span>
                                 </div>
                                 <BehaviorStatusChart />
-                                
+
                                 <div class="mt-2">
                                     가동률: <span class="font-semibold">64%</span>
                                 </div>
@@ -63,24 +65,25 @@
                         </div>
                         <img class="w-[30%] min-w-[150px]" src="/assets/icon/ac_tower.png" />
                         <div>
-                         
-                            <button v-for="(item, index) in operationList" :key="index" class="text-white w-full bg-gray-300 rounded-full text-[0.9rem] py-3 max-w-[400px] my-2" :class="index === 0 ? 'bg-primary' : ''">{{item.name}}</button>
+
+                            <button v-for="(item, index) in operationList" :key="index"
+                                class="text-white w-full bg-gray-300 rounded-full text-[0.9rem] py-3 max-w-[400px] my-2"
+                                :class="index === 0 ? 'bg-primary' : ''">{{ item.name }}</button>
                         </div>
                     </div>
-                    
+
                 </div>
-                
-                
+
+
             </div>
-            
+
             <div class="w-1/4 flex flex-col border-solid border-2
                 border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3">
                 <span class="mr-2 font-semibold">가동 종합 현황</span>
-    
+
                 <div class="flex items-center">
-                                        <span class="text-black text-[1.4rem] mr-2 font-semibold">123,123 khw</span>
-                    <div
-                        class="bg-[#E7F8F3] text-[#11B886] text-[0.8rem] font-bold rounded-[16px] px-3 py-1">
+                    <span class="text-black text-[1.4rem] mr-2 font-semibold">123,123 khw</span>
+                    <div class="bg-[#E7F8F3] text-[#11B886] text-[0.8rem] font-bold rounded-[16px] px-3 py-1">
                         +4.67%
                     </div>
                 </div>
@@ -99,7 +102,7 @@
                             <div class="text-[0.8rem] text-gray-500">kwh</div>
                         </div>
                     </div>
-        
+
                     <div class="flex justify-between my-2">
                         <div class="flex">
                             <img class="mr-2" src="/assets/icon/Avatar-1.svg" />
@@ -113,7 +116,7 @@
                             <div class="text-[0.8rem] text-gray-500">Tons</div>
                         </div>
                     </div>
-        
+
                     <div class="flex justify-between my-2">
                         <div class="flex">
                             <img class="mr-2" src="/assets/icon/Avatar-2.svg" />
@@ -127,7 +130,7 @@
                             <div class="text-[0.8rem] text-gray-500">Tons</div>
                         </div>
                     </div>
-        
+
                     <div class="flex justify-between my-2">
                         <div class="flex">
                             <img class="mr-2" src="/assets/icon/Avatar-3.svg" />
@@ -141,7 +144,7 @@
                             <div class="text-[0.8rem] text-gray-500">Tons</div>
                         </div>
                     </div>
-        
+
                     <div class="flex justify-between my-2">
                         <div class="flex">
                             <img class="mr-2" src="/assets/icon/Avatar-4.svg" />
@@ -155,21 +158,20 @@
                             <div class="text-[0.8rem] text-gray-500">Tons</div>
                         </div>
                     </div>
-    
+
                 </div>
-    
-                
-    
-                
+
+
+
+
             </div>
-    
+
             <div class="w-1/4 flex flex-col">
                 <div class=" flex flex-col border-solid border-2
                     border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3 h-[200px]">
                     <span class="mr-2 font-semibold">가동 누적 시간</span>
                     <span class="mb-[50px]">24 H</span>
-                    <ProgressBar barWidth="200" :percentage="50" barColor="#6950e8"
-                    backgroundColor="#e5e7eb" />
+                    <ProgressBar barWidth="200" :percentage="50" barColor="#6950e8" backgroundColor="#e5e7eb" />
                     <span class="ml-auto text-[0.8rem] text-gray-500">24H/60H</span>
                 </div>
                 <div class=" flex flex-col border-solid border-2
@@ -179,7 +181,7 @@
                         <div class="w-[100%] flex justify-center">
                             <OperationTimeChart />
                         </div>
-                    
+
                         <div class="flex items-center mt-4">
                             <div class="rounded-full w-[8px] h-[8px] bg-primary mr-1 "></div>
                             <span>
@@ -191,18 +193,16 @@
                         </div>
                     </div>
                 </div>
-    
+
             </div>
-    
-    
+
+
         </div>
-    
-        
-    
+
+
+
         <div class="flex">
-            <div 
-            
-            class="flex w-2/3">
+            <div class="flex w-2/3">
                 <div class="w-full flex flex-col border-solid border-2 
                 border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 pt-3">
                     <div class="flex justify-between py-2">
@@ -210,18 +210,18 @@
                         <div class="flex">
                             <button class="mr-3 text-primary cursor-pointer ">week</button>
                             <button class="cursor-pointer ">month</button>
-        
+
                         </div>
                     </div>
                     <div class="ml-3">
-        
+
                         <EnergyUsageDayChart />
                     </div>
                 </div>
-           
-        
+
+
             </div>
-            
+
             <div class="w-1/3 flex flex-col border-solid border-2
                 border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3">
                 <div class="flex justify-between py-2">
@@ -236,7 +236,7 @@
                         </div>
                         <img src="/assets/icon/next.svg" />
                     </div>
-        
+
                     <div class="flex justify-between py-2">
                         <div class="flex flex-col">
                             <span class="text-[1rem] font-semibold">흡착탑 2</span>
@@ -244,7 +244,7 @@
                         </div>
                         <img src="/assets/icon/next.svg" />
                     </div>
-        
+
                     <div class="flex justify-between py-2">
                         <div class="flex flex-col">
                             <span class="text-[1rem] font-semibold">흡착탑 3</span>
@@ -252,7 +252,7 @@
                         </div>
                         <img src="/assets/icon/next.svg" />
                     </div>
-        
+
                     <div class="flex justify-between py-2">
                         <div class="flex flex-col">
                             <span class="text-[1rem] font-semibold">흡착탑 4</span>
@@ -260,20 +260,20 @@
                         </div>
                         <img src="/assets/icon/next.svg" />
                     </div>
-    
+
                 </div>
-    
-                
+
+
             </div>
-    
-         
-    
+
+
+
         </div>
-    
-     
-            
-    
-    
+
+
+
+
+
         <!-- <VViewer /> -->
 
     </body>
@@ -400,7 +400,7 @@ export default {
             operationList
         };
     },
-    components: { Spacer,  TitleBox, VViewer, Layout, KanbanBoard, EnergyUsageDayChart, BehaviorStatusChart, ProcessEnergyUsageChart, EnergyDevelopmentChart, SelectBox, ProgressBar, OperationTimeChart }
+    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, EnergyUsageDayChart, BehaviorStatusChart, ProcessEnergyUsageChart, EnergyDevelopmentChart, SelectBox, ProgressBar, OperationTimeChart }
 
 };
 </script>

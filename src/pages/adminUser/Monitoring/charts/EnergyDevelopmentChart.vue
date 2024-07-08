@@ -24,7 +24,7 @@ export default {
                 backgroundColor: [
                     '#6B7280',
                     '#6950E8',
-                 
+
                 ],
                 cutout: "80%",
 

@@ -32,8 +32,10 @@
                 <span class="text-[0.9rem] font-normal text-primary mb-3 cursor-pointer">회원가입</span>
 
                 <div class="flex">
-                    <CheckMenu :checked="state.selectedUserRole === 'USER'" @click="state.selectedUserRole = 'USER'" class="mr-2" name="사용자" color="primary" />
-                    <CheckMenu :checked="state.selectedUserRole === 'ADMIN'" @click="state.selectedUserRole = 'ADMIN'" name="관리자" color="primary" />
+                    <CheckMenu :checked="state.selectedUserRole === 'USER'" @click="state.selectedUserRole = 'USER'"
+                        class="mr-2" name="사용자" color="primary" />
+                    <CheckMenu :checked="state.selectedUserRole === 'ADMIN'" @click="state.selectedUserRole = 'ADMIN'"
+                        name="관리자" color="primary" />
                 </div>
 
                 <Spacer height="1rem" />
@@ -51,8 +53,7 @@
                     <PasswordInput :apply-hide-btn="true" placeholder="Password" />
                     <Spacer height="1rem" />
 
-                    <button @click="handleLogin()"
-                        class=" text-white w-full bg-primary rounded-md text-[0.9rem] py-3">
+                    <button @click="handleLogin()" class=" text-white w-full bg-primary rounded-md text-[0.9rem] py-3">
 
                         <span class="hover:animate-ping">
                             로그인
@@ -98,16 +99,16 @@ export default {
         })
 
         const handleLogin = () => {
-            if(state.selectedUserRole === 'USER') {
+            if (state.selectedUserRole === 'USER') {
                 window.localStorage.setItem("user_role", "USER")
                 // routeToUserMonitoring()
-                window.location.href="/monitoring"
+                window.location.href = "/monitoring"
             }
-            
-            if(state.selectedUserRole === 'ADMIN') {
+
+            if (state.selectedUserRole === 'ADMIN') {
                 window.localStorage.setItem("user_role", "ADMIN")
                 // routeToAdminMonitoring()
-                window.location.href="/admin/monitoring"
+                window.location.href = "/admin/monitoring"
 
             }
         }

@@ -1,5 +1,5 @@
 <template>
-    
+
     <div class="mr-[20px]" :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" text="통계 / 분석" />
 
@@ -8,108 +8,114 @@
                 <div class="w-full flex border-solid border-2 
                 border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 pt-3 ">
 
-               <KanbanBoard2 class="w-1/3" markImg="/assets/icon/thunder.svg" amount="123,123" description="이번주 에너지 사용량" amount2="123,123" description2="지난주 에너지 사용량" />
-               <KanbanBoard2 class="w-1/3" markImg="/assets/icon/sun.svg" amount="123,123" description="이번주 에너지 사용량" amount2="123,123" description2="지난주 에너지 발전량" />
-               <KanbanBoard2 class="w-1/3" markImg="/assets/icon/money_pocket.svg" amount="123,123" unitName="원" description="이번주 에너지 사용량" amount2="123,123" description2="지난주 누적비용" />
-                
-                
-            </div>
-            <div class="flex">
+                    <KanbanBoard2 class="w-1/3" markImg="/assets/icon/thunder.svg" amount="123,123"
+                        description="이번주 에너지 사용량" amount2="123,123" description2="지난주 에너지 사용량" />
+                    <KanbanBoard2 class="w-1/3" markImg="/assets/icon/sun.svg" amount="123,123"
+                        description="이번주 에너지 사용량" amount2="123,123" description2="지난주 에너지 발전량" />
+                    <KanbanBoard2 class="w-1/3" markImg="/assets/icon/money_pocket.svg" amount="123,123" unitName="원"
+                        description="이번주 에너지 사용량" amount2="123,123" description2="지난주 누적비용" />
 
-                <div class="w-full flex flex-col border-solid border-2 
-                border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
-                    <div class="flex justify-between w-full mb-2">
-                        <div class="flex items-center">
-                            <span class="mt-2 ml-2">에너지 사용량 통계</span>
-                        </div>
-                        <div class="ml-auto">
-                            <button class="mr-2 text-primary font-semibold border-b-2 border-primary pb-2">day</button>
-                            <button class="mr-2">week</button>
-                            <button>month</button>
-                        </div>
-                    </div>
 
-                    <EnergyUsageChart />
-                
-              
-                
                 </div>
-    
-              
+                <div class="flex">
 
-                
-            </div>
-            <div class="w-full flex">
-                <div class="w-1/2 flex flex-col border-solid border-2 
+                    <div class="w-full flex flex-col border-solid border-2 
                 border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
-                <div class="flex justify-between items-center w-full mb-2">
-                        <div class="flex items-center">
-                            <span class=" ml-2">에너지 발전량 통계</span>
+                        <div class="flex justify-between w-full mb-2">
+                            <div class="flex items-center">
+                                <span class="mt-2 ml-2">에너지 사용량 통계</span>
+                            </div>
+                            <div class="ml-auto">
+                                <button
+                                    class="mr-2 text-primary font-semibold border-b-2 border-primary pb-2">day</button>
+                                <button class="mr-2">week</button>
+                                <button>month</button>
+                            </div>
                         </div>
-                        <div class="ml-auto">
-                            <button class="mr-2 text-primary font-semibold border-b-2 border-primary pb-2">week</button>
-                 
-                            <button>month</button>
-                        </div>
+
+                        <EnergyUsageChart />
+
+
+
                     </div>
-                          <EnergyDevelopmentChart />             
+
+
+
+
                 </div>
-                <div class="w-1/2 flex flex-col border-solid border-2 
+                <div class="w-full flex">
+                    <div class="w-1/2 flex flex-col border-solid border-2 
                 border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
-                <div class="flex justify-between items-center w-full mb-2">
-                        <div class="flex items-center">
-                            <span class=" ml-2">에너지 누적 비용 통계</span>
+                        <div class="flex justify-between items-center w-full mb-2">
+                            <div class="flex items-center">
+                                <span class=" ml-2">에너지 발전량 통계</span>
+                            </div>
+                            <div class="ml-auto">
+                                <button
+                                    class="mr-2 text-primary font-semibold border-b-2 border-primary pb-2">week</button>
+
+                                <button>month</button>
+                            </div>
                         </div>
-                        <div class="ml-auto">
-                            <button class="mr-2 text-primary font-semibold border-b-2 border-primary pb-2">week</button>
-                 
-                            <button>month</button>
-                        </div>
+                        <EnergyDevelopmentChart />
                     </div>
-                    <EnergyAccumulationChart />             
+                    <div class="w-1/2 flex flex-col border-solid border-2 
+                border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
+                        <div class="flex justify-between items-center w-full mb-2">
+                            <div class="flex items-center">
+                                <span class=" ml-2">에너지 누적 비용 통계</span>
+                            </div>
+                            <div class="ml-auto">
+                                <button
+                                    class="mr-2 text-primary font-semibold border-b-2 border-primary pb-2">week</button>
+
+                                <button>month</button>
+                            </div>
+                        </div>
+                        <EnergyAccumulationChart />
+
+                    </div>
+                </div>
 
             </div>
-            </div>
-    
-    </div>
-    <div class="w-1/2">
-        <div class="flex">
-            <div class="w-1/2 flex flex-col border-solid border-2 
+            <div class="w-1/2">
+                <div class="flex">
+                    <div class="w-1/2 flex flex-col border-solid border-2 
             border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
-            <div class="flex items-center mb-2">
-                       
+                        <div class="flex items-center mb-2">
+
                             <span class="font-semibold">에너지 사용량 통계</span>
                             <div class="ml-auto">
-                            <button class="mr-4 text-[#11B886] font-semibold">공정별</button>
-                 
-                            <button>설비별</button>
-                        </div>
+                                <button class="mr-4 text-[#11B886] font-semibold">공정별</button>
+
+                                <button>설비별</button>
+                            </div>
                         </div>
 
                         <div class="ml-auto">
                             <button class="mr-2 text-primary font-semibold border-b-2 border-primary pb-2">week</button>
-                 
+
                             <button>month</button>
                         </div>
-    
-                        <div class="mb-4">
-                                
-                              
-                           
-                                    <GreenGasDayChart />
-                            </div>
-        
-        </div>
-        <div class="w-1/2 flex flex-col border-solid border-2 
-            border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
-      
-                        
-                            <div class="w-full text-center py-2 font-semibold">운영 설비 통계</div>
-                            <div class="flex justify-center ">
-                                <FacilityOperationChart />
-                            </div>
 
-                            <div class="flex flex-col h-full mx-3">
+                        <div class="mb-4">
+
+
+
+                            <GreenGasDayChart />
+                        </div>
+
+                    </div>
+                    <div class="w-1/2 flex flex-col border-solid border-2 
+            border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
+
+
+                        <div class="w-full text-center py-2 font-semibold">운영 설비 통계</div>
+                        <div class="flex justify-center ">
+                            <FacilityOperationChart />
+                        </div>
+
+                        <div class="flex flex-col h-full mx-3">
                             <div class="flex justify-between items-center mb-4">
                                 <div class="flex items-center">
                                     <img class="mr-2" src="/assets/icon/sample_1.svg" />
@@ -144,19 +150,19 @@
                                 </div>
                             </div>
                         </div>
-                            
-                        </div>
-    
-                        
-        
-      
-        </div>
-        <TitleBox width="100%" text="실시간 통계" />
-        <div class="flex">
-            <div class="w-1/2 flex flex-col border-solid border-2 
+
+                    </div>
+
+
+
+
+                </div>
+                <TitleBox width="100%" text="실시간 통계" />
+                <div class="flex">
+                    <div class="w-1/2 flex flex-col border-solid border-2 
             border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
-            <div class="w-full text-center pt-2 pb-6 font-semibold">실시간 다소비 설비 top3</div>
-            <div class="flex flex-col h-full mx-3">
+                        <div class="w-full text-center pt-2 pb-6 font-semibold">실시간 다소비 설비 top3</div>
+                        <div class="flex flex-col h-full mx-3">
                             <div class="flex justify-between items-center mb-4">
                                 <div class="flex items-center">
                                     <img class="mr-2" src="/assets/icon/sample_1.svg" />
@@ -197,11 +203,11 @@
                                 </div>
                             </div>
                         </div>
-        </div>
-        <div class="w-1/2 flex flex-col border-solid border-2 
+                    </div>
+                    <div class="w-1/2 flex flex-col border-solid border-2 
             border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
-            <div class="w-full text-center pt-2 pb-6 font-semibold">실시간 다소비 공정 top3</div>
-            <div class="flex flex-col h-full mx-3">
+                        <div class="w-full text-center pt-2 pb-6 font-semibold">실시간 다소비 공정 top3</div>
+                        <div class="flex flex-col h-full mx-3">
                             <div class="flex justify-between items-center mb-4">
                                 <div class="flex items-center">
                                     <img class="mr-2" src="/assets/icon/sample_1.svg" />
@@ -242,20 +248,20 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
         </div>
-        </div>
-      
-
 
     </div>
 
 
-       
-    </div>
-        
-    </div>
-
-    
 </template>
 
 <script lang="ts">
@@ -333,10 +339,10 @@ export default {
 
         return {
             menuList,
-            
+
         };
     },
-    components: { Spacer,  TitleBox, VViewer, Layout, KanbanBoard, KanbanBoard2, ProcessEnergyUsageChart, EnergyDevelopmentChart, ProgressBar, GreenGasDayChart, FacilityOperationChart, EnergyUsageChart, EnergyAccumulationChart }
+    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, KanbanBoard2, ProcessEnergyUsageChart, EnergyDevelopmentChart, ProgressBar, GreenGasDayChart, FacilityOperationChart, EnergyUsageChart, EnergyAccumulationChart }
 
 };
 </script>
