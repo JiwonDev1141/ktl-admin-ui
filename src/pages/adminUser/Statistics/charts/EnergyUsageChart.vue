@@ -1,7 +1,7 @@
 <template>
 
     <div class="w-full">
-        <canvas ref="MyChart" />
+        <canvas height="410" ref="MyChart" />
     </div>
 
 </template>
@@ -31,30 +31,30 @@ export default {
 
             ],
             datasets: [
-            {
+                {
 
-                label: '이번주',
-                data: [16, 6, 36, 90, 30, 12, 44,60,56,30],
-                borderColor: '#6950E8',
-                backgroundColor: '#6950E8',
-                pointRadius: 0,
-                tension: 0.3,
+                    label: '이번주',
+                    data: [16, 6, 36, 90, 30, 12, 44, 60, 56, 30],
+                    borderColor: '#6950E8',
+                    backgroundColor: '#6950E8',
+                    pointRadius: 0,
+                    tension: 0.3,
 
-            },
+                },
                 {
 
 
 
 
                     label: '지난주',
-                    data: [50, 65, 30, 30, 20, 56, 24,42,10,60],
+                    data: [50, 65, 30, 30, 20, 56, 24, 42, 10, 60],
                     borderColor: '#11B886',
                     backgroundColor: '#11B886',
                     pointRadius: 0,
                     tension: 0.3,
                 },
-             
-             
+
+
             ]
         },
         options: {

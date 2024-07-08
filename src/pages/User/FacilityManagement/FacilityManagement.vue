@@ -77,7 +77,7 @@
 
             </div>
 
-            <div class="flex">
+            <div class="flex xl:w-1/2">
                 <div class="w-2/4 flex flex-col border-solid border-2
                     border-gray-200 px-[20px] rounded-[16px] hover:bg-gray-200 py-3">
                     <span class="mr-2 font-semibold">가동 종합 현황</span>

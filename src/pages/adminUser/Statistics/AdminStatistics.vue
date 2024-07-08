@@ -20,7 +20,7 @@
                 <div class="flex">
 
                     <div class="w-full flex flex-col border-solid border-2 
-                border-gray-200 px-[20px] cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
+                border-gray-200 px-[20px]  cursor-pointer rounded-[16px] hover:bg-gray-200 py-3 px-3 ">
                         <div class="flex justify-between w-full mb-2">
                             <div class="flex items-center">
                                 <span class="mt-2 ml-2">에너지 사용량 통계</span>
