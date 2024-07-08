@@ -2,6 +2,7 @@ import {
   createRouter,
   createWebHistory,
   Router,
+  // RouteRecordName,
   RouteRecordRaw,
 } from 'vue-router';
 
@@ -10,7 +11,7 @@ import Login from '@/pages/Login.vue';
 import MonitoringVue from '@/pages/User/Monitoring/Monitoring.vue';
 import PlaygroundPageVue from '@/pages/PlaygroundPage/PlaygroundPage.vue';
 import FacilityManagementVue from '@/pages/User/FacilityManagement/FacilityManagement.vue';
-import AdminMonitoringVue from '@/pages/adminUser/Monitoring/AdminMonitoring.vue';
+// import AdminMonitoringVue from '@/pages/adminUser/Monitoring/AdminMonitoring.vue';
 import AdminStatisticsVue from '@/pages/adminUser/Statistics/AdminStatistics.vue';
 import EnergyManagementVue from '../pages/User/EnergyManagement/EnergyManagement.vue';
 
@@ -70,8 +71,8 @@ const router: Router = createRouter({
 });
 
 router.afterEach((to) => {
-  const baseTitle = to.name;
-
+  const baseTitle = (to.name)?.toString()!;
+  
   if (to.name === 'index') {
     document.title = baseTitle;
   } else {

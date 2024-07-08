@@ -13,10 +13,10 @@ const meta: Meta<typeof SelectBox> = {
   component: SelectBox,
 };
 
-interface menuList {
-  name: string;
-  value: string;
-}
+// interface menuList {
+//   name: string;
+//   value: string;
+// }
 
 export default meta;
 type Story = StoryObj<typeof SelectBox>;

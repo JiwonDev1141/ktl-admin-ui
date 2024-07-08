@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 import TitleBox from './TitleBox.vue';
-import SourceCodeBox from './common/SourceCodeBox.vue';
+// import SourceCodeBox from './common/SourceCodeBox.vue';
 
 import CodeMirror from './common/CodeMirror.vue';
 
