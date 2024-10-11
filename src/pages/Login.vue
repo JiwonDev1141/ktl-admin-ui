@@ -4,7 +4,7 @@
         <!-- 왼쪽 화면 영역 start -->
         <div class=" bg-primary text-white flex justify-center items-center h-2/6 md:w-screen md:h-full">
             <div class="flex flex-col pl-4">
-                <h3 class="text-[2rem] font-semibold">스마트 생태공장</h3>
+                <h3 class="text-[2rem] font-semibold">한국산업기술시험원</h3>
                 <div class="p-[20px]"></div>
                 <span class="text-[1.2rem] font-semibold">You are in a good company</span>
                 <div class="p-[5px]"></div>
@@ -29,7 +29,11 @@
         <div class="flex justify-center items-center md:w-screen h-1/2 md:h-full">
             <div class="flex flex-col justify-start md:w-4/6 lg:w-3/6">
                 <h3 class="text-[2rem] font-medium tracking-tighter">로그인</h3>
-                <span class="text-[0.9rem] font-normal text-primary mb-3 cursor-pointer">회원가입</span>
+                <div class="flex items-center mb-3">
+                    <span class="text-[0.9rem] font-normal text-primary cursor-pointer">회원가입</span>
+                    <span class="mx-2">/</span>
+                    <span class="text-[0.9rem] font-normal text-primary cursor-pointer">비밀번호 찾기</span>
+                </div>
 
                 <div class="flex">
                     <CheckMenu :checked="state.selectedUserRole === 'USER'" @click="state.selectedUserRole = 'USER'"
@@ -45,12 +49,12 @@
                 <Spacer height="1rem" />
                 <form style="max-width: 400px;" @submit.prevent="">
 
-                    <FormInput placeholder="Enter your work email" />
+                    <FormInput placeholder="아이디" />
                     <Spacer height="1rem" />
 
 
 
-                    <PasswordInput :apply-hide-btn="true" placeholder="Password" />
+                    <PasswordInput :apply-hide-btn="true" placeholder="비밀번호" />
                     <Spacer height="1rem" />
 
                     <button @click="handleLogin()" class=" text-white w-full bg-primary rounded-md text-[0.9rem] py-3">
