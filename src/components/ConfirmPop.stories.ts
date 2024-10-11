@@ -31,6 +31,7 @@ export const Primary: Story = {
     `,
   }),
   args: {
-    text: '패스워드를 입력하세요',
+    isRecheck: true,
+    text: '정말 삭제 하시겠습니까?',
   },
 };
