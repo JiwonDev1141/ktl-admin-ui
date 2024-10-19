@@ -18,7 +18,7 @@ const state = reactive({
 const route = useRoute()
 watch(route, (to) => {
     console.log(to.path)
-    if (to.path === '/login') {
+    if (to.path === '/auth/login') {
         state.isLoginPage = true
     }
     else {

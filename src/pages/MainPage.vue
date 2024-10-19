@@ -15,7 +15,7 @@ export default {
 
   setup() {
     // alert(`현재 모드 (import.meta.env.MODE) : ${import.meta.env.MODE}`)
-    router.push("/login")
+    router.push("/auth/login")
     return {};
   },
   components: { AppButton, KanbanBoard }

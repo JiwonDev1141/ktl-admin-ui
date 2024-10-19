@@ -74,14 +74,14 @@
 </template>
 
 <script lang="ts">
-import KanbanBoard from "../components/KanbanBoard.vue";
-import AppButton from "../components/AppButton.vue";
-import CheckMenu from "../components/CheckMenu.vue";
-import Spacer from "../components/Spacer.vue";
-import FormInput from "../components/FormInput.vue";
-import PasswordInput from "../components/PasswordInput.vue"
-import CodeMirror from "../components/common/CodeMirror.vue"
-import router from "../router";
+import KanbanBoard from "@/components/KanbanBoard.vue";
+import AppButton from "@/components/AppButton.vue";
+import CheckMenu from "@/components/CheckMenu.vue";
+import Spacer from "@/components/Spacer.vue";
+import FormInput from "@/components/FormInput.vue";
+import PasswordInput from "@/components/PasswordInput.vue"
+import CodeMirror from "@/components/common/CodeMirror.vue"
+import router from "@/router";
 import { reactive } from "vue";
 export default {
 

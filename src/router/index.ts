@@ -7,7 +7,7 @@ import {
 } from 'vue-router';
 
 import MainPage from '@/pages/MainPage.vue';
-import Login from '@/pages/Login.vue';
+import Login from '@/pages/Auth/Login.vue';
 import ReservationVue from '@/pages/adminUser/Reservation/Reservation.vue';
 import PlaygroundPageVue from '@/pages/PlaygroundPage/PlaygroundPage.vue';
 import ReservationManagementVue from '@/pages/adminUser/ReservationManagement/ReservationManagement.vue';
@@ -23,8 +23,8 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     component: Login,
-    path: '/login',
-    name: 'loginPage',
+    path: '/auth/login',
+    name: 'login',
   },
   {
     component: AdminStatisticsVue,
