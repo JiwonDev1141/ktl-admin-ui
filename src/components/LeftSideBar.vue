@@ -160,7 +160,7 @@ const handleSubmenuClick = (submenu) => {
 }
 
 const handleLogout = () => {
-    router.push("/login")
+    router.push("/auth/login")
 }
 
 </script>
