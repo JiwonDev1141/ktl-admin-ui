@@ -76,7 +76,7 @@ router.afterEach((to) => {
   if (to.name === 'index') {
     document.title = baseTitle;
   } else {
-    document.title = `IoT Dashboard | ${baseTitle}`;
+    document.title = `KTL | ${baseTitle}`;
   }
 });
 
