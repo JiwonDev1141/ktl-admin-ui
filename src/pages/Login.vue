@@ -106,13 +106,13 @@ export default {
             if (state.selectedUserRole === 'USER') {
                 window.localStorage.setItem("user_role", "USER")
                 // routeToUserMonitoring()
-                window.location.href = "/monitoring"
+                window.location.href = "/reservation"
             }
 
             if (state.selectedUserRole === 'ADMIN') {
                 window.localStorage.setItem("user_role", "ADMIN")
                 // routeToAdminMonitoring()
-                window.location.href = "/admin/monitoring"
+                window.location.href = "/admin/reservations"
 
             }
         }

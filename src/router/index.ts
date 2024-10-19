@@ -8,12 +8,12 @@ import {
 
 import MainPage from '@/pages/MainPage.vue';
 import Login from '@/pages/Login.vue';
-import MonitoringVue from '@/pages/User/Monitoring/Monitoring.vue';
+import ReservationVue from '@/pages/adminUser/Reservation/Reservation.vue';
 import PlaygroundPageVue from '@/pages/PlaygroundPage/PlaygroundPage.vue';
-import FacilityManagementVue from '@/pages/User/FacilityManagement/FacilityManagement.vue';
+import ReservationManagementVue from '@/pages/adminUser/ReservationManagement/ReservationManagement.vue';
 // import AdminMonitoringVue from '@/pages/adminUser/Monitoring/AdminMonitoring.vue';
-import AdminStatisticsVue from '@/pages/adminUser/Statistics/AdminStatistics.vue';
-import EnergyManagementVue from '../pages/User/EnergyManagement/EnergyManagement.vue';
+import AdminStatisticsVue from '@/pages/user/Statistics/AdminStatistics.vue';
+import UserManagementVue from '@/pages/adminUser/UserManagement/UserManagement.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -27,19 +27,9 @@ const routes: Array<RouteRecordRaw> = [
     name: 'loginPage',
   },
   {
-    component: MonitoringVue,
-    path: '/monitoring',
-    name: 'monitoring',
-  },
-  {
-    component: FacilityManagementVue,
-    path: '/facility-management',
-    name: 'facilityManagement',
-  },
-  {
-    component: EnergyManagementVue,
-    path: '/energy-management',
-    name: 'energyManagement',
+    component: AdminStatisticsVue,
+    path: '/reservations',
+    name: 'reservation',
   },
   {
     component: PlaygroundPageVue,
@@ -48,14 +38,24 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     // component: AdminMonitoringVue,
-    component: MonitoringVue,
-    path: '/admin/monitoring',
-    name: 'admin-monitoring',
+    component: ReservationVue,
+    path: '/admin/reservations',
+    name: 'admin-reservation',
   },
   {
     component: AdminStatisticsVue,
     path: '/admin/statistics',
     name: 'admin-statistics',
+  },
+  {
+    component: ReservationManagementVue,
+    path: '/admin/reservations/management',
+    name: 'reservationManagement',
+  },
+  {
+    component: UserManagementVue,
+    path: '/admin/users/management',
+    name: 'userManagement',
   },
   //   {
   //     component: Example,
