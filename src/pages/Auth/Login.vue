@@ -1,5 +1,6 @@
 <template>
-
+    <SignUpPop :show="state.showLoginPop" :setShow="setShowLoginPop" />
+    <FindPWPop :show="state.showFindPWPop" :setShow="setShowFindPWPop" />
     <div class="flex flex-col h-screen md:flex-row">
         <!-- 왼쪽 화면 영역 start -->
         <div class=" bg-primary text-white flex justify-center items-center h-2/6 md:w-screen md:h-full">
@@ -30,9 +31,11 @@
             <div class="flex flex-col justify-start md:w-4/6 lg:w-3/6">
                 <h3 class="text-[2rem] font-medium tracking-tighter">로그인</h3>
                 <div class="flex items-center mb-3">
-                    <span class="text-[0.9rem] font-normal text-primary cursor-pointer">회원가입</span>
+                    <span @click="setShowLoginPop(true)"
+                        class="text-[0.9rem] font-normal text-primary cursor-pointer">회원가입</span>
                     <span class="mx-2">/</span>
-                    <span class="text-[0.9rem] font-normal text-primary cursor-pointer">비밀번호 찾기</span>
+                    <span @click="setShowFindPWPop(true)"
+                        class="text-[0.9rem] font-normal text-primary cursor-pointer">비밀번호 찾기</span>
                 </div>
 
                 <div class="flex">
@@ -81,6 +84,9 @@ import Spacer from "@/components/Spacer.vue";
 import FormInput from "@/components/FormInput.vue";
 import PasswordInput from "@/components/PasswordInput.vue"
 import CodeMirror from "@/components/common/CodeMirror.vue"
+import SignUpPop from "./SignUpPop.vue";
+import FindPWPop from "./FindPWPop.vue";
+
 import router from "@/router";
 import { reactive } from "vue";
 export default {
@@ -99,8 +105,18 @@ export default {
         ]
 
         const state = reactive({
-            selectedUserRole: 'USER'
+            selectedUserRole: 'USER',
+            showLoginPop: false,
+            showFindPWPop: false,
         })
+
+        function setShowLoginPop(newState: boolean) {
+            state.showLoginPop = newState;
+        }
+
+        function setShowFindPWPop(newState: boolean) {
+            state.showFindPWPop = newState;
+        }
 
         const handleLogin = () => {
             if (state.selectedUserRole === 'USER') {
@@ -117,6 +133,8 @@ export default {
             }
         }
 
+
+
         const routeToUserMonitoring = () => {
             router.push("/monitoring")
         }
@@ -132,10 +150,12 @@ export default {
             routeToUserMonitoring,
             routeToAdminMonitoring,
             state,
-            handleLogin
+            handleLogin,
+            setShowLoginPop,
+            setShowFindPWPop,
         };
     },
-    components: { AppButton, KanbanBoard, CheckMenu, Spacer, FormInput, PasswordInput, CodeMirror }
+    components: { AppButton, KanbanBoard, CheckMenu, Spacer, FormInput, PasswordInput, CodeMirror, SignUpPop, FindPWPop }
 
 };
 </script>
