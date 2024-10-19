@@ -1,31 +1,16 @@
 <template>
     <div
-        class="flex flex-col justify-between fixed h-full border-r-1 bg-gray-100 w-screen sm:w-[240px] p-[20px] text-[14px]">
+        class="flex flex-col justify-between fixed h-full border-r-1 bg-[#FDFdFF] w-screen sm:w-[240px] p-[20px] text-[14px]">
 
         <div>
-            <svg width="30" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M30.4343 14.6159V14.6516C30.4311 15.1578 30.0179 15.6656 29.1996 16.0476L1.77493 28.9022C0.126274 29.6763 -0.483448 29.0458 0.414289 27.5024L5.43247 18.8736C6.16012 17.6143 6.5765 16.1625 6.5765 14.6159C6.5765 13.0686 6.16012 11.616 5.43247 10.3582L0.414289 1.72944C-0.483448 0.185209 0.126274 -0.445219 1.77493 0.32884L29.1996 13.1827C30.0179 13.5686 30.4311 14.074 30.4343 14.5802V14.6159Z"
-                    fill="#6950E8" />
-                <mask id="mask0_490_2513" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="-1" width="31"
-                    height="16">
-                    <rect y="-0.350098" width="30.5" height="15" fill="#D9D9D9" />
-                </mask>
-                <g mask="url(#mask0_490_2513)">
-                    <path
-                        d="M30.4343 14.6158V14.6515C30.4311 15.1577 30.0179 15.6655 29.1996 16.0474L1.77493 28.9021C0.126274 29.6761 -0.483448 29.0457 0.414289 27.5023L5.43247 18.8735C6.16012 17.6142 6.5765 16.1624 6.5765 14.6158C6.5765 13.0685 6.16012 11.6158 5.43247 10.3581L0.414289 1.72932C-0.483448 0.185087 0.126274 -0.445339 1.77493 0.328718L29.1996 13.1826C30.0179 13.5684 30.4311 14.0739 30.4343 14.5801V14.6158Z"
-                        fill="#4317CA" />
-                </g>
-            </svg>
+            <img src="/assets/icon/ktl_logo.jpg" />
 
             <div class="font-semibold py-6 px-1">
                 MENU
             </div>
 
             <div v-for="(menu, index) in menuList" :key="index">
-                <div 
-                
-                @click="handleMenuClick(menu)"
+                <div @click="handleMenuClick(menu)"
                     class="flex items-center justify-between text-gray-500 cursor-pointer text-[0.9rem] mx-1"
                     :class="state.activatedMenu === menu.menuTitle ? 'text-primary' : ''">
                     <button class="flex items-center">
@@ -81,7 +66,7 @@
                 <div class="rounded-full p-4 bg-gray-300 w-[3rem] h-[3rem] mb-3 flex items-center justify-center">
                     <img src="/assets/icon/user.png" />
                 </div>
-                <span class="font-bold text-md">{{username}}</span>
+                <span class="font-bold text-md">{{ username }}</span>
                 <span>rockwonit1</span>
             </div>
 
@@ -145,15 +130,15 @@ const state = reactive({
 
 const handleMenuClick = (menu) => {
 
-    if(state.activatedMenu === menu.menuTitle) {
+    if (state.activatedMenu === menu.menuTitle) {
         state.activatedMenu = ''
     }
 
-    if(state.activatedMenu !== menu.menuTitle) {
+    if (state.activatedMenu !== menu.menuTitle) {
         state.activatedMenu = menu.menuTitle
     }
-    
-    
+
+
 }
 
 const handleSubmenuClick = (submenu) => {
