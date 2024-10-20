@@ -9,6 +9,14 @@
     <ConfirmPop text="삭제가 완료되었습니다." :show="state.showDeleteInfoPop" :setShow="setShowDeleteInfoPop"
         :confirmCallback="() => { setShowDeleteInfoPop(false); }" />
 
+    <!-- 승인 처리 확인 팝업 -->
+    <ConfirmPop text="승인처리 하시겠습니까?" :show="state.showVerifyConfirmPop" :setShow="setShowVerifyConfirmPop"
+        :confirmCallback="() => { setShowVerifyConfirmPop(false); setShowVerifyInfoPop(true) }" />
+
+    <!-- 승인 처리 완료 팝업 -->
+    <ConfirmPop text="승인 완료되었습니다." :show="state.showVerifyInfoPop" :setShow="setShowVerifyInfoPop"
+        :confirmCallback="() => { setShowVerifyInfoPop(false); }" />
+
     <main :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" title="한국산업기술시험원 재자원화 실증장비 운영관리플랫폼" :description="new Date()" />
         <div class="2xl:px-[10%] py-[20px]">
@@ -22,7 +30,7 @@
                             placeholder="Search" />
                         <img class="w-[16px] h-[16px] absolute ml-[1rem] mb-1" src="/assets/icon/search.png" />
                     </div>
-                    <button
+                    <button @click="setShowVerifyConfirmPop(true)"
                         class="border-2 border-[#6950E8] px-2 font-bold text-[0.9rem] hover:bg-[#6950E8] hover:text-white rounded-md">승인</button>
                 </div>
             </header>
@@ -283,6 +291,8 @@ export default {
             showReservationEditPop: false,
             showDeleteConfirmPop: false,
             showDeleteInfoPop: false,
+            showVerifyConfirmPop: false,
+            showVerifyInfoPop: false,
         })
 
         function setShowReservationEditPop(newState: boolean) {
@@ -296,6 +306,16 @@ export default {
         function setShowDeleteInfoPop(newState: boolean) {
             state.showDeleteInfoPop = newState;
         }
+
+        function setShowVerifyConfirmPop(newState: boolean) {
+            state.showVerifyConfirmPop = newState;
+        }
+
+
+        function setShowVerifyInfoPop(newState: boolean) {
+            state.showVerifyInfoPop = newState;
+        }
+
 
         const menuList: Array<menu> = [
             {
@@ -377,6 +397,8 @@ export default {
             setShowReservationEditPop,
             setShowDeleteConfirmPop,
             setShowDeleteInfoPop,
+            setShowVerifyConfirmPop,
+            setShowVerifyInfoPop,
         };
     },
     components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, EnergyUsageDayChart, BehaviorStatusChart, ProcessEnergyUsageChart, EnergyDevelopmentChart, SelectBox, ProgressBar, OperationTimeChart, TableList2, ReservationEditPop, ConfirmPop }

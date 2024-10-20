@@ -16,6 +16,7 @@ import AdminStatisticsVue from '@/pages/user/Statistics/AdminStatistics.vue';
 import UserManagementVue from '@/pages/adminUser/UserManagement/UserManagement.vue';
 import ReservationVue from '@/pages/User/Reservation/Reservation.vue';
 import ReservationManagementVue from '@/pages/User/ReservationManagement/ReservationManagement.vue';
+import AdminReservationSettingVue from '../pages/adminUser/ReservationManagement/AdminReservationSetting.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -63,6 +64,11 @@ const routes: Array<RouteRecordRaw> = [
     component: AdminReservationManagementVue,
     path: '/admin/reservations/management',
     name: 'admin-reservationManagement',
+  },
+  {
+    component: AdminReservationSettingVue,
+    path: '/admin/reservations/setting',
+    name: 'admin-reservationSetting',
   },
   {
     component: UserManagementVue,
