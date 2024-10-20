@@ -10,11 +10,12 @@ import MainPage from '@/pages/MainPage.vue';
 import Login from '@/pages/Auth/Login.vue';
 import AdminReservationVue from '@/pages/adminUser/Reservation/AdminReservation.vue';
 import PlaygroundPageVue from '@/pages/PlaygroundPage/PlaygroundPage.vue';
-import ReservationManagementVue from '@/pages/adminUser/ReservationManagement/ReservationManagement.vue';
+import AdminReservationManagementVue from '@/pages/adminUser/ReservationManagement/AdminReservationManagement.vue';
 // import AdminMonitoringVue from '@/pages/adminUser/Monitoring/AdminMonitoring.vue';
 import AdminStatisticsVue from '@/pages/user/Statistics/AdminStatistics.vue';
 import UserManagementVue from '@/pages/adminUser/UserManagement/UserManagement.vue';
 import ReservationVue from '@/pages/User/Reservation/Reservation.vue';
+import ReservationManagementVue from '../pages/User/Reservation/ReservationManagement.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -38,6 +39,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'reservations',
   },
   {
+    component: ReservationManagementVue,
+    path: '/reservations/management',
+    name: 'reservationManagement',
+  },
+  {
     component: AdminStatisticsVue,
     path: '/reservations',
     name: 'reservation',
@@ -54,9 +60,9 @@ const routes: Array<RouteRecordRaw> = [
     name: 'admin-statistics',
   },
   {
-    component: ReservationManagementVue,
+    component: AdminReservationManagementVue,
     path: '/admin/reservations/management',
-    name: 'reservationManagement',
+    name: 'admin-reservationManagement',
   },
   {
     component: UserManagementVue,
