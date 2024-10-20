@@ -3,9 +3,9 @@
     <main :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" title="한국산업기술시험원 재자원화 실증장비 운영관리플랫폼" :description="new Date()" />
         <div class="2xl:mx-[5%] my-[5vh] shadow-lg">
-            <header class="py-[1vh] px-[2rem] flex justify-between items-center border-b-[2px] border-gray-200">
+            <header class="py-[1vh] px-[2rem] flex justify-between items-center">
 
-                <h2 class="text-[1.1rem] font-bold">사용자 관리</h2>
+                <h2 class="text-[1.2rem] font-bold">나의 예약내역</h2>
 
                 <div class="flex justify-between">
                     <div class="flex items-center">
@@ -16,47 +16,104 @@
                     </div>
                 </div>
             </header>
-            <main>
+            <main class="mt-2">
 
-                <div class="flex justify-around py-[5vh] px-[5vw]">
-                    <div
-                        class="flex flex-col items-center justify-center border-[2px] border-[#592be7] w-[120px] h-[80px] rounded-xl">
-                        <span class="font-bold">4</span>
-                        <span class="text-[0.9rem]">전체 사용자</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center justify-center border-[2px] border-[#FEBF06] w-[120px] h-[80px] rounded-xl">
-                        <span class="font-bold">1</span>
-                        <span class="text-[0.9rem]">관리자</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center justify-center border-[2px] border-[#11B886] w-[120px] h-[80px] rounded-xl">
-                        <span class="font-bold">3</span>
-                        <span class="text-[0.9rem]">사용자</span>
-                    </div>
-                </div>
 
-                <UserTable :headerData="[
 
-        `<div>가입일</div>`,
-        `<div>사용자명</div>`,
-        `<div>업체명</div>`,
-        `<div>주소</div>`,
-        `<div>이메일</div>`,
-        `<div>연락처</div>`,
-        `<div>회원탈퇴</div>`,
+                <ReservationTable :headerData="[
+
+        `<div>예약번호</div>`,
+        `<div>예약시작일</div>`,
+        `<div>예약종료일</div>`,
+        `<div>장비명</div>`,
+        `<div>장비이용관련 정보</div>`,
+        `<div>수정 및 삭제</div>`,
+
     ]" :bodyData="[
-        `<div>2024/09/27</div>`,
-        `<div class='text-[#FEBF06]'>이종경</div>`,
-        `<div>녹원정보기술</div>`,
-        `<div class='flex flex-col'>
-            <span>서울 영등포구 경인로</span>
-            <span>775 에이스하이테크시티</span>
+        `<div class='font-bold'>#11</div>`,
+        `<div class='flex flex-col text-gray-500'>
+            <span>2024/09/08</span>
+            <span>10:00AM</span>
+        </div>`,
+        `<div class='flex flex-col text-gray-500'>
+            <span>2024/09/08</span>
+            <span>08:00AM</span>
+        </div>`,
+        `<div class='text-gray-500'>로타리 킬른</div>`,
+        `<div class='text-gray-500'>장비 점검</div>`,
+        `<div class='flex'>
+                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
+                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
 
         </div>`,
-        `<div class='absolute'>123214@rockwonitglobal.com</div>`,
-        `<div>010-4818-2172</div>`,
-        `<button class='bg-[#F3F4F6] py-2 px-3 rounded-md'><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px]' /></button>`
+
+        `<div class='font-bold'>#11</div>`,
+        `<div class='flex flex-col text-gray-500'>
+            <span>2024/09/08</span>
+            <span>10:00AM</span>
+        </div>`,
+        `<div class='flex flex-col text-gray-500'>
+            <span>2024/09/08</span>
+            <span>08:00AM</span>
+        </div>`,
+        `<div class='text-gray-500'>로타리 킬른</div>`,
+        `<div class='text-gray-500'>장비 점검</div>`,
+        `<div class='flex'>
+                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
+                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
+
+        </div>`,
+
+        `<div class='font-bold'>#11</div>`,
+        `<div class='flex flex-col text-gray-500'>
+            <span>2024/09/08</span>
+            <span>10:00AM</span>
+        </div>`,
+        `<div class='flex flex-col text-gray-500'>
+            <span>2024/09/08</span>
+            <span>08:00AM</span>
+        </div>`,
+        `<div class='text-gray-500'>로타리 킬른</div>`,
+        `<div class='text-gray-500'>장비 점검</div>`,
+        `<div class='flex'>
+                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
+                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
+
+        </div>`,
+
+        `<div class='font-bold'>#11</div>`,
+        `<div class='flex flex-col text-gray-500'>
+            <span>2024/09/08</span>
+            <span>10:00AM</span>
+        </div>`,
+        `<div class='flex flex-col text-gray-500'>
+            <span>2024/09/08</span>
+            <span>08:00AM</span>
+        </div>`,
+        `<div class='text-gray-500'>로타리 킬른</div>`,
+        `<div class='text-gray-500'>장비 점검</div>`,
+        `<div class='flex'>
+                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
+                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
+
+        </div>`,
+
+        `<div class='font-bold'>#11</div>`,
+        `<div class='flex flex-col text-gray-500'>
+            <span>2024/09/08</span>
+            <span>10:00AM</span>
+        </div>`,
+        `<div class='flex flex-col text-gray-500'>
+            <span>2024/09/08</span>
+            <span>08:00AM</span>
+        </div>`,
+        `<div class='text-gray-500'>로타리 킬른</div>`,
+        `<div class='text-gray-500'>장비 점검</div>`,
+        `<div class='flex'>
+                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
+                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
+
+        </div>`,
     ]" />
             </main>
 
@@ -86,7 +143,7 @@ import Layout from "@/components/Layout.vue"
 
 import KanbanBoard from "@/components/KanbanBoard.vue";
 
-import UserTable from "./UserTable.vue"
+import ReservationTable from "./ReservationTable.vue"
 
 interface menu {
     menuTitle: string;
@@ -141,7 +198,7 @@ export default {
 
         };
     },
-    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, UserTable }
+    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, ReservationTable }
 
 };
 </script>
