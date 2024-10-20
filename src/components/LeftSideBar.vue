@@ -46,7 +46,7 @@
                                 <span class="ml-4 text-[14px]">{{ submenu.name }}</span>
                             </div>
 
-                            <div class="px-4" v-html="submenu.svg"></div>
+                            <!-- <div class="px-4" v-html="submenu.svg"></div> -->
 
 
                         </button>
@@ -109,7 +109,7 @@ interface submenu {
     routeUrl: string;
 }
 
-defineProps({
+const props = defineProps({
     menuList: {
         type: Array<menu>,
         default: [
@@ -140,6 +140,17 @@ const state = reactive({
     activatedMenu: "", // 대메뉴
     activatedSubmenu: "" // 하위메뉴
 })
+
+/**
+ * 최초 기본 선택 메뉴를 첫번째 메뉴 / 서브메뉴로.
+ */
+const initMenuSelection = () => {
+    state.activatedMenu = props.menuList[0].menuTitle
+    state.activatedSubmenu = props.menuList[0].submenuList[0].name
+
+}
+
+initMenuSelection();
 
 const handleMenuClick = (menu) => {
 
