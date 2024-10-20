@@ -1,4 +1,13 @@
 <template>
+    <ReservationEditPop :show="state.showReservationEditPop" :setShow="setShowReservationEditPop" />
+    <!-- 장비 삭제 확인 팝업 -->
+    <ConfirmPop text="정말 삭제하시겠습니까?" :isRecheck="true" :show="state.showDeleteConfirmPop"
+        :setShow="setShowDeleteConfirmPop"
+        :confirmCallback="() => { setShowDeleteConfirmPop(false); setShowDeleteInfoPop(true) }" />
+
+    <!-- 장비 삭제 완료 팝업 -->
+    <ConfirmPop text="삭제가 완료되었습니다." :show="state.showDeleteInfoPop" :setShow="setShowDeleteInfoPop"
+        :confirmCallback="() => { setShowDeleteInfoPop(false); }" />
 
     <main :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" title="한국산업기술시험원 재자원화 실증장비 운영관리플랫폼" :description="new Date()" />
@@ -30,205 +39,200 @@
         `<div>수정 및 삭제</div>`,
         `<div>승인</div>`,
 
-    ]" :bodyData="[
-        `<input type='checkbox'/>`,
-        `<div class='flex items-center'>
-            <img src='/assets/image/crusher.png' class='w-[46px] h-[46px] mr-3' />
-                    <div class='flex flex-col'>
-                        <span class='font-bold whitespace-nowrap w-[80px] text-start'>파쇄기</span>
-                    <span class='text-gray text-[0.9rem] text-start'>#12</span>
+    ]">
+                    <!--  -->
+                    <div class="flex justify-center items-center">
+
+                        <input type='checkbox' />
                     </div>
-            </div>
-        </div>`,
-        `<div>녹원</div>`,
-        `<div>이종경</div>`,
-        `<div>수석</div>`,
-        `<div>DT</div>`,
-        `<div>
-                <span>2024/09/25</span>
-                <span>08:00AM</span>
-        </div>`,
-        `<div>
-                 <span>2024/09/25</span>
-                <span>10:00AM</span>
-        </div>`,
-        `<div class='flex'>
-                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
-                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
-
-        </div>`,
-        `<div>
-                <img src='/assets/icon/verify.png' />
-        </div>`,
-
-        `<input type='checkbox'/>`,
-        `<div class='flex items-center'>
-            <img src='/assets/image/rotary_kiln.png' class='w-[46px] h-[46px] mr-3' />
-                    <div class='flex flex-col'>
-                        <span class='font-bold whitespace-nowrap w-[80px] text-start'>로타리킬른</span>
-                    <span class='text-gray text-[0.9rem] text-start'>#12</span>
+                    <div class='flex items-center'>
+                        <img src='/assets/image/crusher.png' class='w-[46px] h-[46px] mr-3' />
+                        <div class='flex flex-col'>
+                            <span class='font-bold whitespace-nowrap w-[80px] text-start'>파쇄기</span>
+                            <span class='text-gray text-[0.9rem] text-start'>#12</span>
+                        </div>
                     </div>
-            </div>
-        </div>`,
-        `<div>녹원</div>`,
-        `<div>이종경</div>`,
-        `<div>수석</div>`,
-        `<div>DT</div>`,
-        `<div>
-                <span>2024/09/25</span>
-                <span>08:00AM</span>
-        </div>`,
-        `<div>
-                 <span>2024/09/25</span>
-                <span>10:00AM</span>
-        </div>`,
-        `<div class='flex'>
-                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
-                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
 
-        </div>`,
-        `<div>
-              
-        </div>`,
-
-        `<input type='checkbox'/>`,
-        `<div class='flex items-center'>
-            <img src='/assets/image/grinder.png' class='w-[46px] h-[46px] mr-3' />
-                    <div class='flex flex-col'>
-                        <span class='font-bold whitespace-nowrap w-[80px] text-start'>분쇄기</span>
-                    <span class='text-gray text-[0.9rem] text-start'>#12</span>
+                    <div>녹원</div>
+                    <div>이종경</div>
+                    <div>수석</div>
+                    <div>DT</div>
+                    <div class="flex flex-col">
+                        <span>2024/09/25</span>
+                        <span>08:00AM</span>
                     </div>
-            </div>
-        </div>`,
-        `<div>녹원</div>`,
-        `<div>이종경</div>`,
-        `<div>수석</div>`,
-        `<div>DT</div>`,
-        `<div>
-                <span>2024/09/25</span>
-                <span>08:00AM</span>
-        </div>`,
-        `<div>
-                 <span>2024/09/25</span>
-                <span>10:00AM</span>
-        </div>`,
-        `<div class='flex'>
-                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
-                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
-
-        </div>`,
-        `<div>
-                <img src='/assets/icon/verify.png' />
-        </div>`,
-
-
-        `<input type='checkbox'/>`,
-        `<div class='flex items-center'>
-            <img src='/assets/image/crusher.png' class='w-[46px] h-[46px] mr-3' />
-                    <div class='flex flex-col'>
-                        <span class='font-bold whitespace-nowrap w-[80px] text-start'>파쇄기</span>
-                    <span class='text-gray text-[0.9rem] text-start'>#12</span>
+                    <div class="flex flex-col">
+                        <span>2024/09/25</span>
+                        <span>10:00AM</span>
                     </div>
-            </div>
-        </div>`,
-        `<div>녹원</div>`,
-        `<div>이종경</div>`,
-        `<div>수석</div>`,
-        `<div>DT</div>`,
-        `<div>
-                <span>2024/09/25</span>
-                <span>08:00AM</span>
-        </div>`,
-        `<div>
-                 <span>2024/09/25</span>
-                <span>10:00AM</span>
-        </div>`,
-        `<div class='flex'>
-                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
-                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
+                    <div class='flex justify-center'>
+                        <button @click="setShowReservationEditPop(true)"><img src='/assets/icon/pencil.png'
+                                class='w-[16px] h-[16px] mr-2' /></button>
+                        <button @click="setShowDeleteConfirmPop(true)"><img src='/assets/icon/trashcan.png'
+                                class='w-[16px] h-[16px] ml-2' /></button>
 
-        </div>`,
-        `<div>
-                
-        </div>`,
-
-
-        `<input type='checkbox'/>`,
-        `<div class='flex items-center'>
-            <img src='/assets/image/rotary_kiln.png' class='w-[46px] h-[46px] mr-3' />
-                    <div class='flex flex-col'>
-                        <span class='font-bold whitespace-nowrap w-[80px] text-start'>로타리킬른</span>
-                    <span class='text-gray text-[0.9rem] text-start'>#12</span>
                     </div>
-            </div>
-        </div>`,
-        `<div>녹원</div>`,
-        `<div>이종경</div>`,
-        `<div>수석</div>`,
-        `<div>DT</div>`,
-        `<div>
-                <span>2024/09/25</span>
-                <span>08:00AM</span>
-        </div>`,
-        `<div>
-                 <span>2024/09/25</span>
-                <span>10:00AM</span>
-        </div>`,
-        `<div class='flex'>
-                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
-                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
-
-        </div>`,
-        `<div>
-      
-        </div>`,
-
-
-        `<input type='checkbox'/>`,
-        `<div class='flex items-center'>
-            <img src='/assets/image/wet_extractor.png' class='w-[46px] h-[46px] mr-3' />
-                    <div class='flex flex-col'>
-                        <span class='font-bold whitespace-nowrap w-[80px] text-start'>습식추출장비</span>
-                    <span class='text-gray text-[0.9rem] text-start'>#12</span>
+                    <div class='flex justify-center items-center'>
+                        <img src='/assets/icon/verify.png' />
                     </div>
-            </div>
-        </div>`,
-        `<div>녹원</div>`,
-        `<div>이종경</div>`,
-        `<div>수석</div>`,
-        `<div>DT</div>`,
-        `<div>
-                <span>2024/09/25</span>
-                <span>08:00AM</span>
-        </div>`,
-        `<div>
-                 <span>2024/09/25</span>
-                <span>10:00AM</span>
-        </div>`,
-        `<div class='flex'>
-                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
-                <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
+                    <!--  -->
+                    <!--  -->
+                    <div class="flex justify-center items-center">
 
-        </div>`,
-        `<div>
-                
-        </div>`,
+                        <input type='checkbox' />
+                    </div>
+                    <div class='flex items-center'>
+                        <img src='/assets/image/rotary_kiln.png' class='w-[46px] h-[46px] mr-3' />
+                        <div class='flex flex-col'>
+                            <span class='font-bold whitespace-nowrap w-[80px] text-start'>로타리킬른</span>
+                            <span class='text-gray text-[0.9rem] text-start'>#12</span>
+                        </div>
+                    </div>
 
-    ]" />
+                    <div>녹원</div>
+                    <div>이종경</div>
+                    <div>수석</div>
+                    <div>DT</div>
+                    <div class="flex flex-col">
+                        <span>2024/09/25</span>
+                        <span>08:00AM</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span>2024/09/25</span>
+                        <span>10:00AM</span>
+                    </div>
+                    <div class='flex justify-center'>
+                        <button @click="setShowReservationEditPop(true)"><img src='/assets/icon/pencil.png'
+                                class='w-[16px] h-[16px] mr-2' /></button>
+                        <button @click="setShowDeleteConfirmPop(true)"><img src='/assets/icon/trashcan.png'
+                                class='w-[16px] h-[16px] ml-2' /></button>
+
+                    </div>
+                    <div class='flex justify-center items-center'>
+
+                    </div>
+                    <!--  -->
+                    <!--  -->
+                    <div class="flex justify-center items-center">
+
+                        <input type='checkbox' />
+                    </div>
+                    <div class='flex items-center'>
+                        <img src='/assets/image/grinder.png' class='w-[46px] h-[46px] mr-3' />
+                        <div class='flex flex-col'>
+                            <span class='font-bold whitespace-nowrap w-[80px] text-start'>분쇄기</span>
+                            <span class='text-gray text-[0.9rem] text-start'>#12</span>
+                        </div>
+                    </div>
+
+                    <div>녹원</div>
+                    <div>이종경</div>
+                    <div>수석</div>
+                    <div>DT</div>
+                    <div class="flex flex-col">
+                        <span>2024/09/25</span>
+                        <span>08:00AM</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span>2024/09/25</span>
+                        <span>10:00AM</span>
+                    </div>
+                    <div class='flex justify-center'>
+                        <button @click="setShowReservationEditPop(true)"><img src='/assets/icon/pencil.png'
+                                class='w-[16px] h-[16px] mr-2' /></button>
+                        <button @click="setShowDeleteConfirmPop(true)"><img src='/assets/icon/trashcan.png'
+                                class='w-[16px] h-[16px] ml-2' /></button>
+
+                    </div>
+                    <div class='flex justify-center items-center'>
+                        <img src='/assets/icon/verify.png' />
+                    </div>
+                    <!--  -->
+                    <!--  -->
+                    <div class="flex justify-center items-center">
+
+                        <input type='checkbox' />
+                    </div>
+                    <div class='flex items-center'>
+                        <img src='/assets/image/crusher.png' class='w-[46px] h-[46px] mr-3' />
+                        <div class='flex flex-col'>
+                            <span class='font-bold whitespace-nowrap w-[80px] text-start'>파쇄기</span>
+                            <span class='text-gray text-[0.9rem] text-start'>#12</span>
+                        </div>
+                    </div>
+
+                    <div>녹원</div>
+                    <div>이종경</div>
+                    <div>수석</div>
+                    <div>DT</div>
+                    <div class="flex flex-col">
+                        <span>2024/09/25</span>
+                        <span>08:00AM</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span>2024/09/25</span>
+                        <span>10:00AM</span>
+                    </div>
+                    <div class='flex justify-center'>
+                        <button @click="setShowReservationEditPop(true)"><img src='/assets/icon/pencil.png'
+                                class='w-[16px] h-[16px] mr-2' /></button>
+                        <button @click="setShowDeleteConfirmPop(true)"><img src='/assets/icon/trashcan.png'
+                                class='w-[16px] h-[16px] ml-2' /></button>
+
+                    </div>
+                    <div class='flex justify-center items-center'>
+
+                    </div>
+                    <!--  -->
+                    <!--  -->
+                    <div class="flex justify-center items-center">
+
+                        <input type='checkbox' />
+                    </div>
+                    <div class='flex items-center overflow-auto'>
+                        <img src='/assets/image/wet_extractor.png' class='w-[46px] h-[46px] mr-3' />
+                        <div class='flex flex-col'>
+                            <span class='font-bold whitespace-nowrap w-[80px] text-start'>습식추출장비</span>
+                            <span class='text-gray text-[0.9rem] text-start'>#12</span>
+                        </div>
+                    </div>
+
+                    <div>녹원</div>
+                    <div>이종경</div>
+                    <div>수석</div>
+                    <div>DT</div>
+                    <div class="flex flex-col">
+                        <span>2024/09/25</span>
+                        <span>08:00AM</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span>2024/09/25</span>
+                        <span>10:00AM</span>
+                    </div>
+                    <div class='flex justify-center'>
+                        <button @click="setShowReservationEditPop(true)"><img src='/assets/icon/pencil.png'
+                                class='w-[16px] h-[16px] mr-2' /></button>
+                        <button @click="setShowDeleteConfirmPop(true)"><img src='/assets/icon/trashcan.png'
+                                class='w-[16px] h-[16px] ml-2' /></button>
+
+                    </div>
+                    <div class='flex justify-center items-center'>
+
+                    </div>
+                    <!--  -->
+                </TableList2>
             </main>
 
         </div>
-
-
-
-
         <!-- <VViewer /> -->
+
+
 
     </main>
 </template>
 
 <script lang="ts">
-
+import { reactive } from 'vue';
 import Spacer from "@/components/Spacer.vue";
 
 
@@ -249,6 +253,9 @@ import ProgressBar from "@/components/ProgressBar.vue";
 import OperationTimeChart from "./charts/OperationTimeChart.vue"
 
 import TableList2 from "@/components/TableList2.vue"
+
+import ConfirmPop from "@/components/ConfirmPop.vue";
+import ReservationEditPop from "./ReservationEditPop.vue"
 
 interface menu {
     menuTitle: string;
@@ -271,6 +278,24 @@ export default {
         }
     },
     setup() {
+
+        const state = reactive({
+            showReservationEditPop: false,
+            showDeleteConfirmPop: false,
+            showDeleteInfoPop: false,
+        })
+
+        function setShowReservationEditPop(newState: boolean) {
+            state.showReservationEditPop = newState;
+        }
+
+        function setShowDeleteConfirmPop(newState: boolean) {
+            state.showDeleteConfirmPop = newState;
+        }
+
+        function setShowDeleteInfoPop(newState: boolean) {
+            state.showDeleteInfoPop = newState;
+        }
 
         const menuList: Array<menu> = [
             {
@@ -345,12 +370,16 @@ export default {
 
 
         return {
+            state,
             menuList,
             workList,
-            operationList
+            operationList,
+            setShowReservationEditPop,
+            setShowDeleteConfirmPop,
+            setShowDeleteInfoPop,
         };
     },
-    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, EnergyUsageDayChart, BehaviorStatusChart, ProcessEnergyUsageChart, EnergyDevelopmentChart, SelectBox, ProgressBar, OperationTimeChart, TableList2 }
+    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, EnergyUsageDayChart, BehaviorStatusChart, ProcessEnergyUsageChart, EnergyDevelopmentChart, SelectBox, ProgressBar, OperationTimeChart, TableList2, ReservationEditPop, ConfirmPop }
 
 };
 </script>
