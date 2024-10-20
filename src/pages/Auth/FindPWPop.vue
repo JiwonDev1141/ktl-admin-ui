@@ -1,7 +1,7 @@
 <template>
     <PopupContainer v-show="props.show === true">
         <div class="w-[360px] bg-white rounded-md text-[0.9rem]">
-            <header class="border-[1px] border-b-[#6950E8] py-2 rounded-md flex justify-between px-2">
+            <header class="border-[1px] border-b-[#6950E8] py-2 rounded-md flex justify-between px-3">
                 <span></span>
                 <span class="font-bold">비밀번호 찾기</span>
                 <button @click="setShow(false)" class="text-[0.9rem] text-[#6950E8]">X</button>
@@ -34,7 +34,7 @@
 
 
             </main>
-            <footer class="pb-3 flex justify-center">
+            <footer class="pb-6 flex justify-center">
                 <button class="bg-[#9CA3AF] text-white rounded-lg text-[0.9rem] font-bold px-2">회원가입</button>
             </footer>
         </div>
