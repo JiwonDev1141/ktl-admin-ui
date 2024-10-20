@@ -83,7 +83,7 @@
                 <span>rockwonit1</span>
             </div>
 
-            <div class="flex justify-center mt-10">
+            <div class="flex justify-center my-10">
                 <img class="w-[24px] h-[24px] mr-[15%]" src="/assets/icon/logout.png" />
                 <span @click="handleLogout" class="font-bold cursor-pointer">Logout</span>
             </div>
