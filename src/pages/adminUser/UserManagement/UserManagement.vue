@@ -1,4 +1,12 @@
 <template>
+    <!-- 장비 삭제 확인 팝업 -->
+    <ConfirmPop text="정말 XXX 님을 탈퇴처리 하시겠습니까?" :isRecheck="true" :show="state.showDeleteConfirmPop"
+        :setShow="setShowDeleteConfirmPop"
+        :confirmCallback="() => { setShowDeleteConfirmPop(false); setShowDeleteInfoPop(true) }" />
+
+    <!-- 장비 삭제 완료 팝업 -->
+    <ConfirmPop text="탈퇴가 완료되었습니다." :show="state.showDeleteInfoPop" :setShow="setShowDeleteInfoPop"
+        :confirmCallback="() => { setShowDeleteInfoPop(false); }" />
 
     <main :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" title="한국산업기술시험원 재자원화 실증장비 운영관리플랫폼" :description="new Date()" />
@@ -45,19 +53,23 @@
         `<div>이메일</div>`,
         `<div>연락처</div>`,
         `<div>회원탈퇴</div>`,
-    ]" :bodyData="[
-        `<div>2024/09/27</div>`,
-        `<div class='text-[#FEBF06]'>이종경</div>`,
-        `<div>녹원정보기술</div>`,
-        `<div class='flex flex-col'>
-            <span>서울 영등포구 경인로</span>
-            <span>775 에이스하이테크시티</span>
+    ]">
+                    <div class="flex items-center justify-center">2024/09/27</div>
+                    <div class='text-[#FEBF06] flex items-center justify-center'>이종경</div>
+                    <div class="flex items-center justify-center">녹원정보기술</div>
+                    <div class='flex flex-col'>
+                        <span>서울 영등포구</span>
+                        <span>경인로 775</span>
+                        <span>에이스하이테크시티</span>
 
-        </div>`,
-        `<div class='absolute'>123214@rockwonitglobal.com</div>`,
-        `<div>010-4818-2172</div>`,
-        `<button class='bg-[#F3F4F6] py-2 px-3 rounded-md'><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px]' /></button>`
-    ]" />
+                    </div>
+                    <div class="overflow-x-auto flex items-center ">123214@rockwonitglobal.com</div>
+                    <div class="flex items-center justify-center">010-4818-2172</div>
+                    <div class="flex items-center justify-center">
+                        <button @click="setShowDeleteConfirmPop(true)" class='bg-[#F3F4F6] py-2 px-3 rounded-md'><img
+                                src='/assets/icon/trashcan.png' class='w-[16px] h-[16px]' /></button>
+                    </div>
+                </UserTable>
             </main>
 
         </div>
@@ -73,6 +85,8 @@
 </template>
 
 <script lang="ts">
+
+import { reactive } from 'vue';
 
 import Spacer from "@/components/Spacer.vue";
 
@@ -90,6 +104,8 @@ import EnergyUsageFacillityChart from "./charts/EnergyUsageFacillityChart.vue";
 import ProcessEnergyUsageChart from "./charts/ProcessEnergyUsageChart.vue"
 import EnergyDevelopmentChart from "./charts/EnergyDevelopmentChart.vue"
 import UserTable from "./UserTable.vue"
+
+import ConfirmPop from "@/components/ConfirmPop.vue";
 
 interface menu {
     menuTitle: string;
@@ -112,6 +128,21 @@ export default {
         }
     },
     setup() {
+
+
+        const state = reactive({
+            showDeleteConfirmPop: false,
+            showDeleteInfoPop: false,
+        })
+
+        function setShowDeleteConfirmPop(newState: boolean) {
+            state.showDeleteConfirmPop = newState;
+        };
+
+        function setShowDeleteInfoPop(newState: boolean) {
+            state.showDeleteInfoPop = newState;
+        };
+
 
         const menuList: Array<menu> = [
             {
@@ -140,11 +171,13 @@ export default {
 
 
         return {
+            state,
             menuList,
-
+            setShowDeleteConfirmPop,
+            setShowDeleteInfoPop,
         };
     },
-    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, EnergyUsageDayChart, EnergyUsageFacillityChart, ProcessEnergyUsageChart, EnergyDevelopmentChart, UserTable }
+    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, EnergyUsageDayChart, EnergyUsageFacillityChart, ProcessEnergyUsageChart, EnergyDevelopmentChart, UserTable, ConfirmPop }
 
 };
 </script>
