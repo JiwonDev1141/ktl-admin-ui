@@ -1,5 +1,7 @@
 <template>
-
+    <!-- 예약완료 안내 팝업 -->
+    <ConfirmPop text="예약이 완료되었습니다." :show="state.showConfirmPop" :setShow="setShowConfirmPop"
+        :confirmCallback="() => { setShowConfirmPop(false); }" />
     <div class="mr-[20px]" :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" title="한국산업기술시험원 재자원화 실증장비 운영관리플랫폼" :description="new Date()" />
 
@@ -10,14 +12,50 @@
             <div class="text-[0.9rem] font-bold flex justify-center mt-[50px] mb-[20px]">장비 선택</div>
             <div class="xl:flex">
                 <div class="w-full flex justify-between flex-wrap">
-                    <ImageCard title="파쇄기" imageSrc="/assets/image/crusher.png" color="#E5E7EB"
+                    <ImageCard @click="() => {
+        initEquipSelectedState();
+        state.isEquipSelected.card1 = true;
+        window.setTimeout(() => {
+            window.scrollTo({
+                top: 2000,
+
+                behavior: 'smooth'
+            });
+
+        }, 0)
+
+    }" :isSelected="state.isEquipSelected.card1" title="파쇄기" imageSrc="/assets/image/crusher.png" color="#E5E7EB"
                         :sensorList="['전력량계', '메인모터(Crusher Speed)', '서브모터(Feeder Speed)']" />
-                    <ImageCard title="분쇄기" imageSrc="/assets/image/grinder.png" color="#E5E7EB"
+                    <ImageCard @click="{
+        initEquipSelectedState(); state.isEquipSelected.card2 = true; window.setTimeout(() => {
+            window.scrollTo({
+                top: 2000,
+
+                behavior: 'smooth'
+            });
+
+        }, 0)
+    }" :isSelected="state.isEquipSelected.card2" title="분쇄기" imageSrc="/assets/image/grinder.png" color="#E5E7EB"
                         :sensorList="['전력량계', '메인모터(Pin Mill Speed)', '서브모터(Feeder Speed)']" />
-                    <ImageCard title="로타리 킬른" imageSrc="/assets/image/rotary_kiln.png" color="#E5E7EB"
-                        :sensorList="['전력량계', 'TCK 온도계']" />
-                    <ImageCard title="습식추출장비" imageSrc="/assets/image/wet_extractor.png" color="#E5E7EB"
-                        :sensorList="['전력량계', '튜브연동펌프', 'p H 측정기']" />
+                    <ImageCard @click="{
+        initEquipSelectedState(); state.isEquipSelected.card3 = true; window.scrollTo({
+            top: 9999999,
+
+            behavior: 'smooth'
+        });
+    }" :isSelected="state.isEquipSelected.card3" title="로타리 킬른" imageSrc="/assets/image/rotary_kiln.png"
+                        color="#E5E7EB" :sensorList="['전력량계', 'TCK 온도계']" />
+                    <ImageCard @click="{
+        initEquipSelectedState(); state.isEquipSelected.card4 = true; window.setTimeout(() => {
+            window.scrollTo({
+                top: 2000,
+
+                behavior: 'smooth'
+            });
+
+        }, 0)
+    }" :isSelected="state.isEquipSelected.card4" title="습식추출장비" imageSrc="/assets/image/wet_extractor.png"
+                        color="#E5E7EB" :sensorList="['전력량계', '튜브연동펌프', 'p H 측정기']" />
                 </div>
             </div>
 
@@ -36,38 +74,45 @@
                 </div>
             </div>
 
-            <div class="flex my-[50px] px-2 text-[0.9rem] font-bold">
-                <div class="w-1/2 pr-3">
-                    <div class="mb-2">예약자명</div>
-                    <div class="flex justify-center items-center border-[1px] border-gray rounded-md py-2">
-                        이이수
+            <div v-if="state.isEquipSelected.card1 === true ||
+        state.isEquipSelected.card2 === true ||
+        state.isEquipSelected.card3 === true ||
+        state.isEquipSelected.card4 === true
+        ">
+                <div class="flex my-[50px] px-2 text-[0.9rem] font-bold">
+                    <div class="w-1/2 pr-3">
+                        <div class="mb-2">예약자명</div>
+                        <div class="flex justify-center items-center border-[1px] border-gray rounded-md py-2">
+                            이이수
+                        </div>
+                    </div>
+                    <div class="w-1/3 pl-3">
+                        <div class=" mb-2">직급</div>
+                        <div class="flex justify-center items-center border-[1px] border-gray rounded-md py-2">
+                            사원
+                        </div>
                     </div>
                 </div>
-                <div class="w-1/3 pl-3">
-                    <div class=" mb-2">직급</div>
-                    <div class="flex justify-center items-center border-[1px] border-gray rounded-md py-2">
-                        사원
+
+                <div class="flex my-[50px] px-2 text-[0.9rem]">
+                    <div class="w-full pr-3">
+                        <div class="mb-2 font-bold">장비이용관련 정보</div>
+                        <input class="w-full flex items-center border-[1px] border-gray rounded-md px-3 py-2"
+                            placeholder="About" />
+
+                    </div>
+                </div>
+
+
+                <div class="flex my-[50px] px-2 text-[0.9rem]">
+                    <div class="w-full pr-3">
+                        <div class="mb-2 font-bold">기타사항</div>
+                        <input class="w-full h-[100px] flex border-[1px] border-gray rounded-md px-3 py-2"
+                            placeholder="About" />
                     </div>
                 </div>
             </div>
 
-            <div class="flex my-[50px] px-2 text-[0.9rem]">
-                <div class="w-full pr-3">
-                    <div class="mb-2 font-bold">장비이용관련 정보</div>
-                    <input class="w-full flex items-center border-[1px] border-gray rounded-md px-3 py-2"
-                        placeholder="About" />
-
-                </div>
-            </div>
-
-
-            <div class="flex my-[50px] px-2 text-[0.9rem]">
-                <div class="w-full pr-3">
-                    <div class="mb-2 font-bold">기타사항</div>
-                    <input class="w-full h-[100px] flex border-[1px] border-gray rounded-md px-3 py-2"
-                        placeholder="About" />
-                </div>
-            </div>
 
 
 
@@ -75,8 +120,12 @@
 
 
         </main>
-        <footer class="flex justify-center text-[0.9rem] font-bold pb-[50px]">
-            <button class="text-white bg-[#6950E8] mx-3 py-2 w-[180px] rounded-xl">예약하기</button>
+        <footer v-if="state.isEquipSelected.card1 === true ||
+        state.isEquipSelected.card2 === true ||
+        state.isEquipSelected.card3 === true ||
+        state.isEquipSelected.card4 === true" class="flex justify-center text-[0.9rem] font-bold pb-[50px]">
+            <button @click="setShowConfirmPop(true)"
+                class="text-white bg-[#6950E8] mx-3 py-2 w-[180px] rounded-xl">예약하기</button>
             <button class="text-white bg-[#D1D5DB] mx-3 py-2 w-[180px] rounded-xl">초기화</button>
 
         </footer>
@@ -105,9 +154,13 @@ import EnergyDevelopmentChart from "./charts/EnergyDevelopmentChart.vue"
 import GreenGasDayChart from "./charts/GreenGasDayChart.vue"
 import FacilityOperationChart from './charts/FacilityOperationChart.vue'
 import KanbanBoard from "@/components/KanbanBoard.vue";
-import ProgressBar from "@/components/ProgressBar.vue"
+import ProgressBar from "@/components/ProgressBar.vue";
+
+import ConfirmPop from "@/components/ConfirmPop.vue";
 
 import ImageCard from "./ImageCard.vue"
+
+import { reactive, watch } from "vue";
 
 interface menu {
     menuTitle: string;
@@ -156,16 +209,43 @@ export default {
 
         ]
 
+        const state = reactive({
+            showConfirmPop: false,
+            isEquipSelected: {
+                card1: false,
+                card2: false,
+                card3: false,
+                card4: false
+            },
+
+        })
+
+        function setShowConfirmPop(newState: boolean) {
+            state.showConfirmPop = newState;
+        }
+
+        function initEquipSelectedState() {
+            state.isEquipSelected = {
+                card1: false,
+                card2: false,
+                card3: false,
+                card4: false
+            }
+        }
+
 
         return {
             menuList,
-
+            state,
+            initEquipSelectedState,
+            setShowConfirmPop,
         };
     },
     components: {
         Spacer, TitleBox, VViewer, Layout, KanbanBoard,
         ProcessEnergyUsageChart, EnergyDevelopmentChart, ProgressBar,
         GreenGasDayChart, FacilityOperationChart,
+        ConfirmPop,
         ImageCard
     }
 

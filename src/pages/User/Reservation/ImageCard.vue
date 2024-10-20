@@ -1,6 +1,6 @@
 <template>
-    <div class="rounded-md min-w-[260px] border-[2px] border-grey-200 flex flex-col items-center cursor-pointer mx-2"
-        :class="isSelected ? 'border-[5px] border-primaryColor' : 'border-[2px] border-grey-200'">
+    <div class="rounded-xl min-w-[260px] border-[2px] border-grey-200 flex flex-col items-center cursor-pointer mx-2 my-2"
+        :class="isSelected ? 'border-[2px] border-[#6950E8]' : 'border-[2px] border-grey-200'">
         <span class="rounded-md my-1 w-[90%] text-center font-bold" :style="`border: solid 1.5px ${color}`">{{ title
             }}</span>
         <img class="w-full " :src="imageSrc" />
@@ -31,10 +31,6 @@ defineProps({
     sensorList: {
         type: Array,
         default: ['전력량계', '메인모터(Crusher Speed)', '서브모터(Feeder Speed)']
-    },
-    onClick: {
-        type: Function,
-        required: false
     },
     isSelected: {
         type: Boolean,

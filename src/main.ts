@@ -8,4 +8,6 @@ import './index.css';
 const app = createApp(App).use(router);
 app.use(InstallCodemirro);
 
+app.config.globalProperties.window = window
+
 app.mount('#app');

@@ -1,6 +1,6 @@
 <template>
     <div v-show="show"
-        class="absolute z-[999] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-lg flex flex-col items-center justify-center w-[360px] h-[160px] border-[1px] border-black">
+        class="fixed z-[999] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] bg-white rounded-lg flex flex-col items-center justify-center w-[360px] h-[160px] border-[1px] border-black">
         <strong class="text-lg mb-2 px-[15%] h-[70%] flex items-center">
             {{ text }}
         </strong>
