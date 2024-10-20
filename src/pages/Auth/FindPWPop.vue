@@ -1,4 +1,9 @@
 <template>
+
+    <!-- 회원가입 완료 안내 팝업 -->
+    <ConfirmPop text="이메일로 임시 비밀번호를 전송하였습니다." :show="state.showConfirmPop" :setShow="setShowConfirmPop"
+        :confirmCallback="() => { setShowConfirmPop(false); }" />
+
     <PopupContainer v-show="props.show === true">
         <div class="w-[360px] bg-white rounded-md text-[0.9rem]">
             <header class="border-[1px] border-b-[#6950E8] py-2 rounded-md flex justify-between px-3">
@@ -6,7 +11,7 @@
                 <span class="font-bold">비밀번호 찾기</span>
                 <button @click="setShow(false)" class="text-[0.9rem] text-[#6950E8]">X</button>
             </header>
-            <main class="px-3 pt-3 pb-2">
+            <main class="px-5 pt-3 pb-2">
 
 
 
@@ -35,7 +40,8 @@
 
             </main>
             <footer class="pb-6 flex justify-center">
-                <button class="bg-[#9CA3AF] text-white rounded-lg text-[0.9rem] font-bold px-2">회원가입</button>
+                <button @click="() => { setShowConfirmPop(true); setShow(false); }"
+                    class="bg-[#9CA3AF] text-white rounded-lg text-[0.8rem] font-bold px-2">회원가입</button>
             </footer>
         </div>
 
@@ -44,8 +50,10 @@
 </template>
 
 <script setup>
-import PopupContainer from "@/components/common/PopupContainer.vue"
+import { reactive } from 'vue';
 
+import PopupContainer from "@/components/common/PopupContainer.vue"
+import ConfirmPop from "@/components/ConfirmPop.vue"
 
 import TitleBox from "@/components/TitleBox.vue"
 
@@ -54,9 +62,14 @@ const props = defineProps({
     setShow: Function,
 })
 
-console.log(props)
+const state = reactive({
+    showConfirmPop: false,
 
+})
 
+function setShowConfirmPop(newState) {
+    state.showConfirmPop = newState;
+}
 
 
 </script>
