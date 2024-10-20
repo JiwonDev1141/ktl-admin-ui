@@ -12,7 +12,6 @@ import AdminReservationVue from '@/pages/adminUser/Reservation/AdminReservation.
 import PlaygroundPageVue from '@/pages/PlaygroundPage/PlaygroundPage.vue';
 import AdminReservationManagementVue from '@/pages/adminUser/ReservationManagement/AdminReservationManagement.vue';
 // import AdminMonitoringVue from '@/pages/adminUser/Monitoring/AdminMonitoring.vue';
-import AdminStatisticsVue from '@/pages/user/Statistics/AdminStatistics.vue';
 import UserManagementVue from '@/pages/adminUser/UserManagement/UserManagement.vue';
 import ReservationVue from '@/pages/User/Reservation/Reservation.vue';
 import ReservationManagementVue from '@/pages/User/ReservationManagement/ReservationManagement.vue';
@@ -44,21 +43,12 @@ const routes: Array<RouteRecordRaw> = [
     path: '/reservations/management',
     name: 'reservationManagement',
   },
-  {
-    component: AdminStatisticsVue,
-    path: '/reservations',
-    name: 'reservation',
-  },
+
   {
     // component: AdminMonitoringVue,
     component: AdminReservationVue,
     path: '/admin/reservations',
     name: 'admin-reservations',
-  },
-  {
-    component: AdminStatisticsVue,
-    path: '/admin/statistics',
-    name: 'admin-statistics',
   },
   {
     component: AdminReservationManagementVue,
