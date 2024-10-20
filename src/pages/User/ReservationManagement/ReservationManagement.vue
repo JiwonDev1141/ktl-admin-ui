@@ -1,5 +1,5 @@
 <template>
-
+    <ReservationEditPop :show="state.showReservationEditPop" :setShow="setShowReservationEditPop" />
     <main :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" title="한국산업기술시험원 재자원화 실증장비 운영관리플랫폼" :description="new Date()" />
         <div class="2xl:mx-[5%] my-[5vh] shadow-lg">
@@ -42,7 +42,7 @@
         `<div class='text-gray-500'>로타리 킬른</div>`,
         `<div class='text-gray-500'>장비 점검</div>`,
         `<div class='flex'>
-                <button><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
+                <button onClick='setShowReservationEditPop(true)'><img src='/assets/icon/pencil.png' class='w-[16px] h-[16px] mr-2' /></button>
                 <button><img src='/assets/icon/trashcan.png' class='w-[16px] h-[16px] ml-2' /></button>
 
         </div>`,
@@ -145,6 +145,10 @@ import KanbanBoard from "@/components/KanbanBoard.vue";
 
 import ReservationTable from "./ReservationTable.vue"
 
+import ReservationEditPop from "./ReservationEditPop.vue"
+
+import { reactive } from 'vue';
+
 interface menu {
     menuTitle: string;
 
@@ -166,6 +170,14 @@ export default {
         }
     },
     setup() {
+
+        const state = reactive({
+            showReservationEditPop: true,
+        })
+
+        function setShowReservationEditPop(newState) {
+            state.showReservationEditPop = newState;
+        }
 
         const menuList: Array<menu> = [
             {
@@ -194,11 +206,12 @@ export default {
 
 
         return {
+            state,
             menuList,
-
+            setShowReservationEditPop,
         };
     },
-    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, ReservationTable }
+    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, ReservationTable, ReservationEditPop }
 
 };
 </script>

@@ -15,7 +15,7 @@ import AdminReservationManagementVue from '@/pages/adminUser/ReservationManageme
 import AdminStatisticsVue from '@/pages/user/Statistics/AdminStatistics.vue';
 import UserManagementVue from '@/pages/adminUser/UserManagement/UserManagement.vue';
 import ReservationVue from '@/pages/User/Reservation/Reservation.vue';
-import ReservationManagementVue from '../pages/User/Reservation/ReservationManagement.vue';
+import ReservationManagementVue from '@/pages/User/ReservationManagement/ReservationManagement.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
