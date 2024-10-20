@@ -2,8 +2,8 @@
 
     <main :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" title="한국산업기술시험원 재자원화 실증장비 운영관리플랫폼" :description="new Date()" />
-        <div class="2xl:mx-[5%] my-[20px] py-[10px] shadow-lg">
-            <header class="py-[2vh] px-[2rem] flex justify-between items-center border-b-[2px] border-gray-200">
+        <div class="2xl:mx-[5%] my-[5vh] shadow-lg">
+            <header class="py-[1vh] px-[2rem] flex justify-between items-center border-b-[2px] border-gray-200">
 
                 <h2 class="text-[1.1rem] font-bold">사용자 관리</h2>
 

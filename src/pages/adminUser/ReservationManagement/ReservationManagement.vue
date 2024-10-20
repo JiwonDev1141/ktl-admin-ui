@@ -3,7 +3,7 @@
     <main :style="`margin-left:${leftSideBarWidth}`">
         <TitleBox width="100%" title="한국산업기술시험원 재자원화 실증장비 운영관리플랫폼" :description="new Date()" />
         <div class="2xl:px-[10%] py-[20px]">
-            <header class="mb-[5vh]">
+            <header class="mt-[2vh] mb-[5vh]">
                 <div class="flex justify-center">
                     <h2 class="text-[1.1rem] font-bold">예약 목록</h2>
                 </div>
