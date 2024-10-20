@@ -7,7 +7,7 @@
         <div class="h-[30%]">
             <button @click="handleConfirm"
                 class="rounded-lg text-white text-center bg-primary py-1 px-4 mx-2 text-[0.8rem]">확인</button>
-            <button v-if="isRecheck === true"
+            <button v-if="isRecheck === true" @click="setShow(false)"
                 class="rounded-lg text-white text-center bg-primary py-1 px-4 mx-2 text-[0.8rem] ">닫기</button>
 
         </div>
