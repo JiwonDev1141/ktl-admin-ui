@@ -1,5 +1,5 @@
 <template>
-    <VDatePicker v-model="date" color="indigo" mode="dateTime" />
+    <VDatePicker v-model="date" color="indigo" mode="dateTime" :time-accuracy="1" hide-time-header />
 </template>
 
 <script setup>

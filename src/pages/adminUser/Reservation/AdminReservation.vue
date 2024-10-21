@@ -26,6 +26,10 @@
 
             </div>
 
+            <div class="">
+                <VCalendar expanded trim-weeks footer />
+            </div>
+
 
             <div class="rounded-md border-2 border-gray text-center w-1/2 my-3 py-2 ml-[50%] translate-x-[-50%]">
                 2024/09/26 예약 내역</div>
@@ -71,6 +75,9 @@ import KanbanBoard from "@/components/KanbanBoard.vue";
 import ProgressBar from "@/components/ProgressBar.vue"
 import ImageCard from "@/components/ImageCard.vue"
 import TableList from "@/components/TableList.vue";
+
+import VCalendar from "@/components/VCalendar.vue"
+
 
 import router from "@/router"
 
@@ -171,7 +178,7 @@ export default {
     },
     components: {
         Spacer, TitleBox, VViewer, Layout, KanbanBoard, ImageCard,
-        TableList,
+        TableList, VCalendar,
         ProcessEnergyUsageChart, EnergyDevelopmentChart, ProgressBar, GreenGasDayChart,
         FacilityOperationChart, WaterInfoPopup, WasteInfoPopup, GreenGasPopup, OperationPopup, PollutionPopup
     }

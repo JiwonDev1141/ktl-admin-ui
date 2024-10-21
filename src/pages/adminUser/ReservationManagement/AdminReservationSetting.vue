@@ -27,7 +27,9 @@
 
             </header>
             <main>
-
+                <div class="w-full h-[1000px]">
+                    <VCalendar expanded trim-weeks footer />
+                </div>
             </main>
 
         </div>
@@ -63,6 +65,9 @@ import TableList2 from "@/components/TableList2.vue"
 
 import ConfirmPop from "@/components/ConfirmPop.vue";
 import ReservationEditPop from "./ReservationEditPop.vue"
+
+import VCalendar from "@/components/VCalendar.vue"
+
 
 interface menu {
     menuTitle: string;
@@ -200,7 +205,7 @@ export default {
             setShowVerifyInfoPop,
         };
     },
-    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, EnergyUsageDayChart, BehaviorStatusChart, ProcessEnergyUsageChart, EnergyDevelopmentChart, SelectBox, ProgressBar, OperationTimeChart, TableList2, ReservationEditPop, ConfirmPop }
+    components: { Spacer, TitleBox, VViewer, Layout, KanbanBoard, EnergyUsageDayChart, BehaviorStatusChart, ProcessEnergyUsageChart, EnergyDevelopmentChart, SelectBox, ProgressBar, OperationTimeChart, TableList2, ReservationEditPop, ConfirmPop, VCalendar }
 
 };
 </script>
