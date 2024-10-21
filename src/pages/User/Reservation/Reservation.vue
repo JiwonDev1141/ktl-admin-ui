@@ -61,15 +61,31 @@
 
             <div class="flex my-[50px] px-2 text-[0.9rem]">
                 <div class="w-1/2 pr-2">
-                    <div class="font-bold">예약시작일</div>
-                    <div class="flex justify-center items-center">
-                        시작 일시를 선택하여 주세요 ->
+                    <div class="font-bold p-2">예약시작일</div>
+                    <div @click="state.showReservationStartCalendar = !state.showReservationStartCalendar"
+                        class="flex justify-between items-center border-[1px] border-gray-400 p-3 cursor-pointer rounded-md">
+                        <span></span>
+                        <span>
+                            시작 일시를 선택해주세요 ->
+                        </span>
+                        <img src="/assets/icon/v_calendar.png" />
+                    </div>
+                    <div v-if="state.showReservationStartCalendar" class="flex justify-center">
+                        <VCalendar />
                     </div>
                 </div>
                 <div class="w-1/2 pr-2">
-                    <div class="font-bold">예약종료일</div>
-                    <div class="flex justify-center items-center">
-                        시작 일시를 선택하여 주세요 ->
+                    <div class="font-bold p-2">예약종료일</div>
+                    <div @click="state.showReservationEndCalendar = !state.showReservationEndCalendar"
+                        class="flex justify-between items-center border-[1px] border-gray-400 p-3 cursor-pointer rounded-md">
+                        <span></span>
+                        <span>
+                            종료 일시를 선택해주세요 ->
+                        </span>
+                        <img src="/assets/icon/v_calendar.png" />
+                    </div>
+                    <div v-if="state.showReservationEndCalendar" class="flex justify-center">
+                        <VCalendar />
                     </div>
                 </div>
             </div>
@@ -160,7 +176,9 @@ import ConfirmPop from "@/components/ConfirmPop.vue";
 
 import ImageCard from "./ImageCard.vue"
 
-import { reactive, watch } from "vue";
+import VCalendar from "@/components/VCalendar.vue"
+
+import { reactive, ref, watch } from "vue";
 
 interface menu {
     menuTitle: string;
@@ -217,6 +235,10 @@ export default {
                 card3: false,
                 card4: false
             },
+            showReservationStartCalendar: false,
+            showReservationEndCalendar: false,
+            reservationStartDate: null,
+            reservationEndDate: null
 
         })
 
@@ -246,7 +268,8 @@ export default {
         ProcessEnergyUsageChart, EnergyDevelopmentChart, ProgressBar,
         GreenGasDayChart, FacilityOperationChart,
         ConfirmPop,
-        ImageCard
+        ImageCard,
+        VCalendar
     }
 
 };

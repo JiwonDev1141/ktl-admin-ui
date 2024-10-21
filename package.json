@@ -42,6 +42,7 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@storybook/addon-storysource": "^8.1.5",
     "@storybook/vue3-vite": "^7.6.10",
     "@vitejs/plugin-vue": "^5.0.3",
@@ -55,6 +56,7 @@
     "storybook-addon-code-preview": "^0.0.9",
     "storybook-addon-preview": "^2.3.0",
     "storybook-code-view": "^1.0.0",
+    "v-calendar": "^3.1.2",
     "vite-plugin-compression": "^0.5.1",
     "vite-raw-plugin": "^1.0.2",
     "vue-router": "^4.0.13"
