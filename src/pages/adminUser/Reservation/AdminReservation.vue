@@ -27,7 +27,20 @@
             </div>
 
             <div class="">
-                <VCalendar expanded trim-weeks footer />
+                <!-- <VCalendar expanded trim-weeks footer /> -->
+                <FullCalendar :events="[
+        { title: '', date: dayjs('2024-10-18').format(), color: '#FEBF06' },
+        { title: '', date: dayjs('2024-10-19').format(), color: '#FEBF06' },
+
+        { title: '', date: dayjs('2024-10-20').format(), color: '#FEBF06' },
+        { title: '', date: dayjs('2024-10-20').format(), color: '#EF4770' },
+        { title: '', date: dayjs('2024-10-20').format(), color: '#11B886' },
+
+        { title: '', date: dayjs('2024-10-21').format(), color: '#FEBF06' },
+        { title: '', date: dayjs('2024-10-22').format(), color: '#FEBF06' },
+
+
+    ]" />
             </div>
 
 
@@ -77,6 +90,8 @@ import ImageCard from "@/components/ImageCard.vue"
 import TableList from "@/components/TableList.vue";
 
 import VCalendar from "@/components/VCalendar.vue"
+import FullCalendar from "@/components/FullCalendar.vue";
+import dayjs from "dayjs";
 
 
 import router from "@/router"
@@ -162,6 +177,8 @@ export default {
             state.showPollutionPopup = newState;
         }
 
+        const now = dayjs();
+
 
 
         return {
@@ -173,12 +190,14 @@ export default {
             setShowWasteInfoPopup,
             setShowGreenGasPopup,
             setShowOperationPopup,
-            setShowPollutionPopup
+            setShowPollutionPopup,
+            now,
+            dayjs
         };
     },
     components: {
         Spacer, TitleBox, VViewer, Layout, KanbanBoard, ImageCard,
-        TableList, VCalendar,
+        TableList, VCalendar, FullCalendar,
         ProcessEnergyUsageChart, EnergyDevelopmentChart, ProgressBar, GreenGasDayChart,
         FacilityOperationChart, WaterInfoPopup, WasteInfoPopup, GreenGasPopup, OperationPopup, PollutionPopup
     }
