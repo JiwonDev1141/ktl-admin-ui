@@ -27,9 +27,9 @@
 
             </header>
             <main>
-                <div class="w-full h-[1000px]">
-          
-                    <FullCalendar  />
+                <div class="w-full">
+
+                    <FullCalendar />
                 </div>
             </main>
 

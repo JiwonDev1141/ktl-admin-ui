@@ -50,7 +50,7 @@ export const Primary: Story = {
     events: [
         {
             title: '',
-            date: dayjs().format(),
+            date: dayjs().add(1, 'day').format(),
             color: 'black'
         }
     ]

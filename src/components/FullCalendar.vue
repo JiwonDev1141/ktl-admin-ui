@@ -21,10 +21,16 @@ const props = defineProps({
 const calendarOptions = {
     plugins: [dayGridPlugin, interactionPlugin, momentPlugin],
     initialView: 'dayGridMonth',
-    events: props.events
+    events: props.events,
+
 }
 
 
 
 
 </script>
+<style>
+.fc-daygrid-day {
+    height: 100px !important;
+}
+</style>
